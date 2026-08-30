@@ -1,0 +1,17 @@
+node_modules/
+.pnpm-store/
+.nx/
+dist/
+coverage/
+.output/
+.nuxt/
+
+.env
+.env.*
+!.env.example
+
+.DS_Store
+*.log
+
+.agents/runs/
+fixtures/nexon/.staging/

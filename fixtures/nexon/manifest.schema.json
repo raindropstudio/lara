@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lara.moe/schemas/nexon-fixture-manifest.json",
+  "title": "Lara Nexon fixture manifest 규격",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "recordedAt", "cases"],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/case"
+      }
+    }
+  },
+  "$defs": {
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "character", "responses"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "character": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["nickname", "reason"],
+          "properties": {
+            "nickname": {
+              "type": "string",
+              "minLength": 1
+            },
+            "worldName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "responses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/response"
+          }
+        }
+      }
+    },
+    "response": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "endpointId",
+        "path",
+        "query",
+        "status",
+        "contentType",
+        "bodyPath",
+        "sha256"
+      ],
+      "properties": {
+        "endpointId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^/maplestory/v1/"
+        },
+        "query": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 599
+        },
+        "contentType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nexonErrorCode": {
+          "type": "string",
+          "pattern": "^OPENAPI[0-9]{5}$"
+        },
+        "bodyPath": {
+          "type": "string",
+          "pattern": "^recordings/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  }
+}

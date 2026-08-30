@@ -1,0 +1,31 @@
+{
+  "name": "@lara/workspace",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=24 <27",
+    "pnpm": "11.19.0"
+  },
+  "scripts": {
+    "build": "nx run-many -t build --all",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "dev": "pnpm dev:api",
+    "dev:api": "nx run @lara/api:dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "graph": "nx graph",
+    "lint": "nx run-many -t lint --all",
+    "test": "nx run-many -t test --all",
+    "typecheck": "nx run-many -t typecheck --all"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "eslint": "catalog:",
+    "nx": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:"
+  }
+}

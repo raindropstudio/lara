@@ -1,0 +1,8 @@
+.nx
+coverage
+dist
+node_modules
+pnpm-lock.yaml
+
+# 기록한 원본 응답은 다시 포맷하지 않는다.
+fixtures/nexon/recordings
