@@ -5,9 +5,7 @@
 
 ## 맥락
 
-Lara에는 독립적으로 배포하는 웹, API, 수집, 분석 프로세스와 재사용 TypeScript
-패키지가 필요하다. 코드를 Nx generator에 종속시키지 않으면서 공통 task graph와
-검증 환경을 제공해야 한다.
+Lara에는 독립적으로 배포하는 웹, API, 수집, 분석 프로세스와 재사용 TypeScript 패키지가 필요하다. 코드를 Nx generator에 종속시키지 않으면서 공통 task graph와 검증 환경을 제공해야 한다.
 
 ## 선택지
 
@@ -18,15 +16,11 @@ Lara에는 독립적으로 배포하는 웹, API, 수집, 분석 프로세스와
 
 ## 결정
 
-pnpm workspace를 패키지 경계로 사용한다. Nx는 프로젝트 탐색, task 실행, 캐시,
-affected 실행, 의존성 확인을 담당한다. 각 앱과 패키지는 일반적인 package script를
-소유한다.
+pnpm workspace를 패키지 경계로 사용한다. Nx는 프로젝트 탐색, task 실행, 캐시, affected 실행, 의존성 확인을 담당한다. 각 앱과 패키지는 일반적인 package script를 소유한다.
 
-Node.js 24 LTS를 기준으로 하고 pnpm 버전을 고정한다. 전환 기간에는 Node.js 25와
-26도 허용한다.
+Node.js 24 LTS를 기준으로 하고 pnpm 버전을 고정한다. 전환 기간에는 Node.js 25와 26도 허용한다.
 
-레거시 저장소의 Git 이력은 가져오지 않는다. 필요한 동작을 이전할 때까지 각
-`master` 브랜치를 참고한다.
+레거시 저장소의 Git 이력은 가져오지 않는다. 필요한 동작을 이전할 때까지 각 `master` 브랜치를 참고한다.
 
 ## 결과
 
@@ -36,5 +30,4 @@ Node.js 24 LTS를 기준으로 하고 pnpm 버전을 고정한다. 전환 기간
 
 ## 검증
 
-`pnpm check`가 Nx graph를 통해 format, lint, typecheck, test, build를 실행해야 한다.
-`pnpm nx show projects`가 workspace package를 찾아야 한다.
+`pnpm check`가 Nx graph를 통해 format, lint, typecheck, test, build를 실행해야 한다. `pnpm nx show projects`가 workspace package를 찾아야 한다.

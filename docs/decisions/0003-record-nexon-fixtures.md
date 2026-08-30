@@ -5,9 +5,7 @@
 
 ## 맥락
 
-기본 테스트는 빠르고 재현 가능해야 하며 실제 Nexon API 형식, 부분 응답, 알려진 호환성
-문제를 검증해야 한다. 실제 API를 호출하면 공용 quota를 사용하고 시간과 점검 상태에
-따라 결과가 달라진다.
+기본 테스트는 빠르고 재현 가능해야 하며 실제 Nexon API 형식, 부분 응답, 알려진 호환성 문제를 검증해야 한다. 실제 API를 호출하면 공용 quota를 사용하고 시간과 점검 상태에 따라 결과가 달라진다.
 
 ## 선택지
 
@@ -18,13 +16,9 @@
 
 ## 결정
 
-공용 Nexon client를 사용하는 재현 가능한 recorder를 만든다. 허용된 캐릭터 계획을
-입력받아 등록된 endpoint를 호출하고 인증 정보를 제거한다. 응답 원문과 SHA-256,
-`fixtures/nexon/manifest.schema.json` 형식의 manifest를 저장한다.
+공용 Nexon client를 사용하는 재현 가능한 recorder를 만든다. 허용된 캐릭터 계획을 입력받아 등록된 endpoint를 호출하고 인증 정보를 제거한다. 응답 원문과 SHA-256, `fixtures/nexon/manifest.schema.json` 형식의 manifest를 저장한다.
 
-대표 사례만 작게 커밋한다. 기록을 변형해 누락, null, 필드명 변경, 잘못된 형식,
-Nexon 오류를 검증할 수 있다. 벤더 중립 skill은 recorder 실행과 diff 검토를 돕지만
-실행 가능한 도구를 기준으로 삼는다.
+대표 사례만 작게 커밋한다. 기록을 변형해 누락, null, 필드명 변경, 잘못된 형식, Nexon 오류를 검증할 수 있다. 벤더 중립 skill은 recorder 실행과 diff 검토를 돕지만 실행 가능한 도구를 기준으로 삼는다.
 
 ## 결과
 
