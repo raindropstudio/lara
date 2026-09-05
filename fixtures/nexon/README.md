@@ -20,3 +20,13 @@ fixtures/nexon/
 ```bash
 pnpm --filter @lara/nexon-fixtures verify
 ```
+
+## 군장검사 실제 응답
+
+`party-inspection.plan.json`은 [Figma 군장검사](https://www.figma.com/design/EnWT6VTeCpaKG5ZKgKK6rS/lara.moe?node-id=1509-84)의 텍스트 레이어로 확인한 빙캔·소주에보드카·섭주·무들·믹끼유·버블볍을 허용한다. `recorded/party-inspection/`에는 2026-09-05 수집한 106개 응답을 보관한다. 5명의 ID와 full collection 20개 요청이 성공했고, 믹끼유는 ID 조회의 HTTP 400 `OPENAPI00004` 응답만 있다. 실패 원인이나 변경된 이름은 추측하지 않는다. 디자인에 표시된 과거 레벨·장비와 현재 API 응답은 다를 수 있다.
+
+키를 파일에 복사하지 않고 다시 기록하려면 Doppler CLI 로그인 후 저장소 루트에서 다음 명령을 실행한다. 출력 경로는 기존 기록을 덮어쓰지 않도록 새로 지정한다. 이는 실제 API 호출이며 기본 테스트 명령에는 포함하지 않는다.
+
+```sh
+doppler run --project lara-backend --config dev_personal --only-secrets NXAPI_KEY --no-fallback -- pnpm --filter @lara/nexon-fixtures record -- --plan fixtures/nexon/party-inspection.plan.json --out fixtures/nexon/recorded/party-inspection-new --concurrency 2
+```

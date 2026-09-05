@@ -1,0 +1,1556 @@
+{
+  "schemaVersion": 1,
+  "source": "recorded",
+  "recordedAt": "2026-09-05T10:00:24.755Z",
+  "cases": [
+    {
+      "id": "party-1",
+      "character": {
+        "nickname": "빙캔",
+        "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증"
+      },
+      "responses": [
+        {
+          "responseId": "character-ocid",
+          "endpointId": "characterOcid",
+          "path": "/maplestory/v1/id",
+          "query": {
+            "character_name": "빙캔"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/4d8291094a927a3a4b668a33f203ed75fb542f911caf4acbfd656e7860a79ea5.body",
+          "sha256": "4d8291094a927a3a4b668a33f203ed75fb542f911caf4acbfd656e7860a79ea5",
+          "latencyMs": 110.381291,
+          "recordedAt": "2026-09-05T10:00:22.201Z"
+        },
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic",
+          "path": "/maplestory/v1/character/basic",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/c4130eacad86ec6c2db3b5bc027aff49c9a2c60da7bab165acd5fd52db61ab72.body",
+          "sha256": "c4130eacad86ec6c2db3b5bc027aff49c9a2c60da7bab165acd5fd52db61ab72",
+          "latencyMs": 41.16050000000001,
+          "recordedAt": "2026-09-05T10:00:22.243Z"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity",
+          "path": "/maplestory/v1/character/popularity",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/67c68ed6e64a1bef044009212e6ad43896b33da310161f71413cb60174b9f4f5.body",
+          "sha256": "67c68ed6e64a1bef044009212e6ad43896b33da310161f71413cb60174b9f4f5",
+          "latencyMs": 34.25783299999998,
+          "recordedAt": "2026-09-05T10:00:22.237Z"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat",
+          "path": "/maplestory/v1/character/stat",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/e43d80f8f45d8349813e797fcba0dd27ba240057e80e66700904d449ff4f2960.body",
+          "sha256": "e43d80f8f45d8349813e797fcba0dd27ba240057e80e66700904d449ff4f2960",
+          "latencyMs": 61.986958000000016,
+          "recordedAt": "2026-09-05T10:00:22.300Z"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat",
+          "path": "/maplestory/v1/character/hyper-stat",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/6d2cccaff94d9553be4cbd6a89e187158261723e5145c0280f6f0db49494e365.body",
+          "sha256": "6d2cccaff94d9553be4cbd6a89e187158261723e5145c0280f6f0db49494e365",
+          "latencyMs": 39.423625000000015,
+          "recordedAt": "2026-09-05T10:00:22.283Z"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity",
+          "path": "/maplestory/v1/character/propensity",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/ecc34b0778b8857bab21f9821259b35fbcdd3134082b1b7d3ca552aa63f6a16b.body",
+          "sha256": "ecc34b0778b8857bab21f9821259b35fbcdd3134082b1b7d3ca552aa63f6a16b",
+          "latencyMs": 42.85816600000004,
+          "recordedAt": "2026-09-05T10:00:22.327Z"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility",
+          "path": "/maplestory/v1/character/ability",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/68c6868c9059b9ca58dc9f1abfc1bf1556364f29bb1952d7dbb2599e5b0aaab4.body",
+          "sha256": "68c6868c9059b9ca58dc9f1abfc1bf1556364f29bb1952d7dbb2599e5b0aaab4",
+          "latencyMs": 40.23516599999999,
+          "recordedAt": "2026-09-05T10:00:22.340Z"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment",
+          "path": "/maplestory/v1/character/item-equipment",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/42eed8b55a221c9366b22bfeba46c622da0ebb5117d2642dbcae0f3faa185925.body",
+          "sha256": "42eed8b55a221c9366b22bfeba46c622da0ebb5117d2642dbcae0f3faa185925",
+          "latencyMs": 68.02154200000001,
+          "recordedAt": "2026-09-05T10:00:22.397Z"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment",
+          "path": "/maplestory/v1/character/cashitem-equipment",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/e570bcd12db440805e67ff53f95599d9b93a8da6c0c2b95684d54ecba8b65308.body",
+          "sha256": "e570bcd12db440805e67ff53f95599d9b93a8da6c0c2b95684d54ecba8b65308",
+          "latencyMs": 42.33529199999998,
+          "recordedAt": "2026-09-05T10:00:22.383Z"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment",
+          "path": "/maplestory/v1/character/symbol-equipment",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/80bbbfd0b82a26bf64a4427420d40a70e01607cb83befe92ee966b82e0d13e11.body",
+          "sha256": "80bbbfd0b82a26bf64a4427420d40a70e01607cb83befe92ee966b82e0d13e11",
+          "latencyMs": 40.82191599999999,
+          "recordedAt": "2026-09-05T10:00:22.425Z"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect",
+          "path": "/maplestory/v1/character/set-effect",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/589a8970677619e54390791edff8e4eff778fa4d72dcdd24c0ce70905a07c0dc.body",
+          "sha256": "589a8970677619e54390791edff8e4eff778fa4d72dcdd24c0ce70905a07c0dc",
+          "latencyMs": 60.88687500000003,
+          "recordedAt": "2026-09-05T10:00:22.459Z"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment",
+          "path": "/maplestory/v1/character/beauty-equipment",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/eda616000a053a70cd6a07b5e66b34d6868a7a8cebded7c1be2d2f66d5a3045e.body",
+          "sha256": "eda616000a053a70cd6a07b5e66b34d6868a7a8cebded7c1be2d2f66d5a3045e",
+          "latencyMs": 45.09649999999999,
+          "recordedAt": "2026-09-05T10:00:22.471Z"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment",
+          "path": "/maplestory/v1/character/android-equipment",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/4b821d1b7deacebc4b07d422aeb464819d52d86083b15a6294922f0e79db26e7.body",
+          "sha256": "4b821d1b7deacebc4b07d422aeb464819d52d86083b15a6294922f0e79db26e7",
+          "latencyMs": 48.50758300000001,
+          "recordedAt": "2026-09-05T10:00:22.508Z"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment",
+          "path": "/maplestory/v1/character/pet-equipment",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/288c5f3cce26748d6be84ce600d3a5b61a14e13d8f5dceba10cdf7bf5ede2d43.body",
+          "sha256": "288c5f3cce26748d6be84ce600d3a5b61a14e13d8f5dceba10cdf7bf5ede2d43",
+          "latencyMs": 42.78704199999993,
+          "recordedAt": "2026-09-05T10:00:22.514Z"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "path": "/maplestory/v1/character/skill",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d",
+            "character_skill_grade": "5"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/6f2423601f1eae7edc5048e03bc471b2e7de095d97cd92134e69c56f874fb31e.body",
+          "sha256": "6f2423601f1eae7edc5048e03bc471b2e7de095d97cd92134e69c56f874fb31e",
+          "latencyMs": 47.39729199999999,
+          "recordedAt": "2026-09-05T10:00:22.556Z"
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "path": "/maplestory/v1/character/skill",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d",
+            "character_skill_grade": "6"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/0f3405709c86db370587b7810ceee047ce467cc8c89ea96a8875bf49ac21fdf1.body",
+          "sha256": "0f3405709c86db370587b7810ceee047ce467cc8c89ea96a8875bf49ac21fdf1",
+          "latencyMs": 47.35329200000001,
+          "recordedAt": "2026-09-05T10:00:22.562Z"
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill",
+          "path": "/maplestory/v1/character/link-skill",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/b107451f2ede08d8f1cfa504e3a0c8b566914a5ce7ad4bea9ab6ded1c1256b87.body",
+          "sha256": "b107451f2ede08d8f1cfa504e3a0c8b566914a5ce7ad4bea9ab6ded1c1256b87",
+          "latencyMs": 39.374165999999946,
+          "recordedAt": "2026-09-05T10:00:22.596Z"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix",
+          "path": "/maplestory/v1/character/vmatrix",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/99c287668012f34252f9f8f601f7600483ee0188c1b62dd9da778fb0d1e2e74a.body",
+          "sha256": "99c287668012f34252f9f8f601f7600483ee0188c1b62dd9da778fb0d1e2e74a",
+          "latencyMs": 41.836374999999975,
+          "recordedAt": "2026-09-05T10:00:22.604Z"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix",
+          "path": "/maplestory/v1/character/hexamatrix",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/02a7117b0a3e224653a2bbe8db174c7ac6fd43cf020907910acc6ce0f9701960.body",
+          "sha256": "02a7117b0a3e224653a2bbe8db174c7ac6fd43cf020907910acc6ce0f9701960",
+          "latencyMs": 42.06158300000004,
+          "recordedAt": "2026-09-05T10:00:22.639Z"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat",
+          "path": "/maplestory/v1/character/hexamatrix-stat",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/677d6e3ac26d3a8a10d8552c5cdcfd063901e592bac097603184680d2774d015.body",
+          "sha256": "677d6e3ac26d3a8a10d8552c5cdcfd063901e592bac097603184680d2774d015",
+          "latencyMs": 40.958375000000046,
+          "recordedAt": "2026-09-05T10:00:22.645Z"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion",
+          "path": "/maplestory/v1/user/union",
+          "query": {
+            "ocid": "9840bed43210b91f628ff224c4bf1125efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-1/a6769724c2dc249079d71aece73ae47a9bf25ccf9f577d877918b58ce8ccb9b1.body",
+          "sha256": "a6769724c2dc249079d71aece73ae47a9bf25ccf9f577d877918b58ce8ccb9b1",
+          "latencyMs": 40.64470800000004,
+          "recordedAt": "2026-09-05T10:00:22.680Z"
+        }
+      ]
+    },
+    {
+      "id": "party-2",
+      "character": {
+        "nickname": "소주에보드카",
+        "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증"
+      },
+      "responses": [
+        {
+          "responseId": "character-ocid",
+          "endpointId": "characterOcid",
+          "path": "/maplestory/v1/id",
+          "query": {
+            "character_name": "소주에보드카"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/b5b22677b36a76cc0c4839d7f249b978087ea05c0f2966f3273fc7855f87a924.body",
+          "sha256": "b5b22677b36a76cc0c4839d7f249b978087ea05c0f2966f3273fc7855f87a924",
+          "latencyMs": 44.95229200000006,
+          "recordedAt": "2026-09-05T10:00:22.726Z"
+        },
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic",
+          "path": "/maplestory/v1/character/basic",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/cd3cf70b8770818a9b3e84c3e554604f3356145d3160a1cff3a0beff05d55bc5.body",
+          "sha256": "cd3cf70b8770818a9b3e84c3e554604f3356145d3160a1cff3a0beff05d55bc5",
+          "latencyMs": 34.31000000000006,
+          "recordedAt": "2026-09-05T10:00:22.760Z"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity",
+          "path": "/maplestory/v1/character/popularity",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/8c4b37e55afd3c7d7f32959d76974bda96bde6c351685d218c054ff1f9026161.body",
+          "sha256": "8c4b37e55afd3c7d7f32959d76974bda96bde6c351685d218c054ff1f9026161",
+          "latencyMs": 29.785624999999982,
+          "recordedAt": "2026-09-05T10:00:22.756Z"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat",
+          "path": "/maplestory/v1/character/stat",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/f5101c03a2ee34d5092599bcec6a41fc24f34b947d9659671b8424bfa6867500.body",
+          "sha256": "f5101c03a2ee34d5092599bcec6a41fc24f34b947d9659671b8424bfa6867500",
+          "latencyMs": 35.557458,
+          "recordedAt": "2026-09-05T10:00:22.796Z"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat",
+          "path": "/maplestory/v1/character/hyper-stat",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/ddc9f736680285361dda6dbf72659f4f09bb08c810f715a723a0bd9589c08fc6.body",
+          "sha256": "ddc9f736680285361dda6dbf72659f4f09bb08c810f715a723a0bd9589c08fc6",
+          "latencyMs": 35.06116599999996,
+          "recordedAt": "2026-09-05T10:00:22.796Z"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity",
+          "path": "/maplestory/v1/character/propensity",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/ecc34b0778b8857bab21f9821259b35fbcdd3134082b1b7d3ca552aa63f6a16b.body",
+          "sha256": "ecc34b0778b8857bab21f9821259b35fbcdd3134082b1b7d3ca552aa63f6a16b",
+          "latencyMs": 26.637041000000067,
+          "recordedAt": "2026-09-05T10:00:22.823Z"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility",
+          "path": "/maplestory/v1/character/ability",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/cae082e1bc0bab8d9f3b0e0d739c2a82749dd0d65391d23603411b802f71d044.body",
+          "sha256": "cae082e1bc0bab8d9f3b0e0d739c2a82749dd0d65391d23603411b802f71d044",
+          "latencyMs": 37.855500000000006,
+          "recordedAt": "2026-09-05T10:00:22.835Z"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment",
+          "path": "/maplestory/v1/character/item-equipment",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/8d5a2bd0f0b354e038ee0210a7ae0029a073efb20261163305ead5b935d8fb40.body",
+          "sha256": "8d5a2bd0f0b354e038ee0210a7ae0029a073efb20261163305ead5b935d8fb40",
+          "latencyMs": 55.62800000000004,
+          "recordedAt": "2026-09-05T10:00:22.880Z"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment",
+          "path": "/maplestory/v1/character/cashitem-equipment",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/dc0a5d5a545a04f3d1860c6e6bb2f4f5735dda607ebfef4b71af46117bae02fa.body",
+          "sha256": "dc0a5d5a545a04f3d1860c6e6bb2f4f5735dda607ebfef4b71af46117bae02fa",
+          "latencyMs": 35.50004200000001,
+          "recordedAt": "2026-09-05T10:00:22.871Z"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment",
+          "path": "/maplestory/v1/character/symbol-equipment",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/acb0bc609cb741c15f9909b85b799aa6af0e0530e023468cef82b5f0cf4985a7.body",
+          "sha256": "acb0bc609cb741c15f9909b85b799aa6af0e0530e023468cef82b5f0cf4985a7",
+          "latencyMs": 41.99920799999995,
+          "recordedAt": "2026-09-05T10:00:22.914Z"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect",
+          "path": "/maplestory/v1/character/set-effect",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/b45fc446ec2fbabda99e823a15484b6ac24820ba0ec856bdf982a5029ee295fe.body",
+          "sha256": "b45fc446ec2fbabda99e823a15484b6ac24820ba0ec856bdf982a5029ee295fe",
+          "latencyMs": 56.07466599999998,
+          "recordedAt": "2026-09-05T10:00:22.937Z"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment",
+          "path": "/maplestory/v1/character/beauty-equipment",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/8c368fa0e32883aa8654520e80073a1e9d557cee63d43d480b90041bc72defa3.body",
+          "sha256": "8c368fa0e32883aa8654520e80073a1e9d557cee63d43d480b90041bc72defa3",
+          "latencyMs": 38.88316699999996,
+          "recordedAt": "2026-09-05T10:00:22.954Z"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment",
+          "path": "/maplestory/v1/character/android-equipment",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/07b54a8293d75d5f66ec6caec1ca66e57f4c988c18b1b52aa2c9b0fa5b0a197a.body",
+          "sha256": "07b54a8293d75d5f66ec6caec1ca66e57f4c988c18b1b52aa2c9b0fa5b0a197a",
+          "latencyMs": 41.27716600000008,
+          "recordedAt": "2026-09-05T10:00:22.979Z"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment",
+          "path": "/maplestory/v1/character/pet-equipment",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/67630c509a8d2cedd8084de8e5ec435be946a653dbad4880d5e1912c09d4edd7.body",
+          "sha256": "67630c509a8d2cedd8084de8e5ec435be946a653dbad4880d5e1912c09d4edd7",
+          "latencyMs": 33.8131249999999,
+          "recordedAt": "2026-09-05T10:00:22.988Z"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "path": "/maplestory/v1/character/skill",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d",
+            "character_skill_grade": "5"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/1817afd3bc443aa606281773d59b1570a933dd51d272ecf1d1b7cd16281af47a.body",
+          "sha256": "1817afd3bc443aa606281773d59b1570a933dd51d272ecf1d1b7cd16281af47a",
+          "latencyMs": 34.04816699999992,
+          "recordedAt": "2026-09-05T10:00:23.014Z"
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "path": "/maplestory/v1/character/skill",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d",
+            "character_skill_grade": "6"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/a64b1aa8b71b2305d1814a1412a2212c19a73388caeb657e916f348d0b958611.body",
+          "sha256": "a64b1aa8b71b2305d1814a1412a2212c19a73388caeb657e916f348d0b958611",
+          "latencyMs": 35.05783300000007,
+          "recordedAt": "2026-09-05T10:00:23.024Z"
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill",
+          "path": "/maplestory/v1/character/link-skill",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/559bd446a525b1df72d150a56ca9368cf1e97ac35aba7cd4e69e9530068acc1b.body",
+          "sha256": "559bd446a525b1df72d150a56ca9368cf1e97ac35aba7cd4e69e9530068acc1b",
+          "latencyMs": 49.075417000000016,
+          "recordedAt": "2026-09-05T10:00:23.064Z"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix",
+          "path": "/maplestory/v1/character/vmatrix",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/a9a512a1899747d41eca9c03e7ba79801d43c57a33389c1f139891e9972013c1.body",
+          "sha256": "a9a512a1899747d41eca9c03e7ba79801d43c57a33389c1f139891e9972013c1",
+          "latencyMs": 267.368209,
+          "recordedAt": "2026-09-05T10:00:23.292Z"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix",
+          "path": "/maplestory/v1/character/hexamatrix",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/9c37afb7f6f4d3d3227f3ac521a7841c7bc698fe64a9030dc4e433235c66f27d.body",
+          "sha256": "9c37afb7f6f4d3d3227f3ac521a7841c7bc698fe64a9030dc4e433235c66f27d",
+          "latencyMs": 44.678083000000015,
+          "recordedAt": "2026-09-05T10:00:23.110Z"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat",
+          "path": "/maplestory/v1/character/hexamatrix-stat",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/a032a4d52f2a78b3028bf3efa7a48cd40181437ae62bf25ec77bbd3108c69d49.body",
+          "sha256": "a032a4d52f2a78b3028bf3efa7a48cd40181437ae62bf25ec77bbd3108c69d49",
+          "latencyMs": 30.690708000000086,
+          "recordedAt": "2026-09-05T10:00:23.141Z"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion",
+          "path": "/maplestory/v1/user/union",
+          "query": {
+            "ocid": "86a75c36b5394d6cedb428184b75e4a8efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-2/3d148d32b0454d0cd964ddf8bd5b9d02009b232f6d59f48951509dac14418448.body",
+          "sha256": "3d148d32b0454d0cd964ddf8bd5b9d02009b232f6d59f48951509dac14418448",
+          "latencyMs": 30.654207999999926,
+          "recordedAt": "2026-09-05T10:00:23.173Z"
+        }
+      ]
+    },
+    {
+      "id": "party-3",
+      "character": {
+        "nickname": "섭주",
+        "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증"
+      },
+      "responses": [
+        {
+          "responseId": "character-ocid",
+          "endpointId": "characterOcid",
+          "path": "/maplestory/v1/id",
+          "query": {
+            "character_name": "섭주"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/be74fb7bc8a3126e5164f2130a58e33b98167aac523fc499c0297c47e977454f.body",
+          "sha256": "be74fb7bc8a3126e5164f2130a58e33b98167aac523fc499c0297c47e977454f",
+          "latencyMs": 39.09154200000012,
+          "recordedAt": "2026-09-05T10:00:23.332Z"
+        },
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic",
+          "path": "/maplestory/v1/character/basic",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/e727e6c17c7e5b9c7449bfe9a55618e27ba8a8b98922560945da9ad0430d4516.body",
+          "sha256": "e727e6c17c7e5b9c7449bfe9a55618e27ba8a8b98922560945da9ad0430d4516",
+          "latencyMs": 33.22195899999997,
+          "recordedAt": "2026-09-05T10:00:23.366Z"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity",
+          "path": "/maplestory/v1/character/popularity",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/698507fb52afd703b5013fe17b9ffd35846fd5ccab21ad8b9978a663fe9a83aa.body",
+          "sha256": "698507fb52afd703b5013fe17b9ffd35846fd5ccab21ad8b9978a663fe9a83aa",
+          "latencyMs": 38.561084000000164,
+          "recordedAt": "2026-09-05T10:00:23.371Z"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat",
+          "path": "/maplestory/v1/character/stat",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/29b58528e404c374ad7c70b6fc5f3a6f88a7263911b2941f5e2679b8e298c9ea.body",
+          "sha256": "29b58528e404c374ad7c70b6fc5f3a6f88a7263911b2941f5e2679b8e298c9ea",
+          "latencyMs": 43.31654200000003,
+          "recordedAt": "2026-09-05T10:00:23.409Z"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat",
+          "path": "/maplestory/v1/character/hyper-stat",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/63e7481b7f388d04bdfafd020ebf521070a2fc60ff01421ea0a4883736fd0144.body",
+          "sha256": "63e7481b7f388d04bdfafd020ebf521070a2fc60ff01421ea0a4883736fd0144",
+          "latencyMs": 34.195374999999785,
+          "recordedAt": "2026-09-05T10:00:23.406Z"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity",
+          "path": "/maplestory/v1/character/propensity",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/ecc34b0778b8857bab21f9821259b35fbcdd3134082b1b7d3ca552aa63f6a16b.body",
+          "sha256": "ecc34b0778b8857bab21f9821259b35fbcdd3134082b1b7d3ca552aa63f6a16b",
+          "latencyMs": 30.365082999999913,
+          "recordedAt": "2026-09-05T10:00:23.437Z"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility",
+          "path": "/maplestory/v1/character/ability",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/04d95149958431b04e5072beb2c8578dba09ed710b25117c9efebc2d71408ea4.body",
+          "sha256": "04d95149958431b04e5072beb2c8578dba09ed710b25117c9efebc2d71408ea4",
+          "latencyMs": 39.04558399999996,
+          "recordedAt": "2026-09-05T10:00:23.449Z"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment",
+          "path": "/maplestory/v1/character/item-equipment",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/d7623d6cbd95ecba762d4b49441efc733ce27ca9203bda5d8fcd5aab8cdc5f2b.body",
+          "sha256": "d7623d6cbd95ecba762d4b49441efc733ce27ca9203bda5d8fcd5aab8cdc5f2b",
+          "latencyMs": 75.253375,
+          "recordedAt": "2026-09-05T10:00:23.514Z"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment",
+          "path": "/maplestory/v1/character/cashitem-equipment",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/cdc253dfb9602f83592dece1b42d65fcaedd40665b7cc82707ab15eed9ffd0ec.body",
+          "sha256": "cdc253dfb9602f83592dece1b42d65fcaedd40665b7cc82707ab15eed9ffd0ec",
+          "latencyMs": 31.688542000000098,
+          "recordedAt": "2026-09-05T10:00:23.482Z"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment",
+          "path": "/maplestory/v1/character/symbol-equipment",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/450d66af60d7451725e6c1c995728ed81052528874e7339dd2c067405128c84e.body",
+          "sha256": "450d66af60d7451725e6c1c995728ed81052528874e7339dd2c067405128c84e",
+          "latencyMs": 33.45662500000003,
+          "recordedAt": "2026-09-05T10:00:23.516Z"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect",
+          "path": "/maplestory/v1/character/set-effect",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/71777eed7f675e4094ff9108bb3b286c48434ac8ef6832225b48e8d93a77ef8e.body",
+          "sha256": "71777eed7f675e4094ff9108bb3b286c48434ac8ef6832225b48e8d93a77ef8e",
+          "latencyMs": 80.899541,
+          "recordedAt": "2026-09-05T10:00:23.595Z"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment",
+          "path": "/maplestory/v1/character/beauty-equipment",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/4c0c27ed966587856971db977ef3e8424e562488230c663a222efaef7bb3ce5a.body",
+          "sha256": "4c0c27ed966587856971db977ef3e8424e562488230c663a222efaef7bb3ce5a",
+          "latencyMs": 29.2204999999999,
+          "recordedAt": "2026-09-05T10:00:23.546Z"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment",
+          "path": "/maplestory/v1/character/android-equipment",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/8aa061e446c21f6ab17be06769e2f41fbdfaab2541bf64a80f5a126b9f770776.body",
+          "sha256": "8aa061e446c21f6ab17be06769e2f41fbdfaab2541bf64a80f5a126b9f770776",
+          "latencyMs": 31.552874999999858,
+          "recordedAt": "2026-09-05T10:00:23.578Z"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment",
+          "path": "/maplestory/v1/character/pet-equipment",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/a0c0fbed5172556a1f458afada935c6eb98ec59a7acc06587f897a6cd3b49d2b.body",
+          "sha256": "a0c0fbed5172556a1f458afada935c6eb98ec59a7acc06587f897a6cd3b49d2b",
+          "latencyMs": 32.42391599999996,
+          "recordedAt": "2026-09-05T10:00:23.611Z"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "path": "/maplestory/v1/character/skill",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d",
+            "character_skill_grade": "5"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/ab66751da1821cdc0f1d651303e5179335bdef8b36d667c9f0e26f6f80ac431a.body",
+          "sha256": "ab66751da1821cdc0f1d651303e5179335bdef8b36d667c9f0e26f6f80ac431a",
+          "latencyMs": 33.437625000000025,
+          "recordedAt": "2026-09-05T10:00:23.629Z"
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "path": "/maplestory/v1/character/skill",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d",
+            "character_skill_grade": "6"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/e4625b1b4c4c0647c8ae14dd4bb6478ed9a25434cca33087925f1b681e92b9c0.body",
+          "sha256": "e4625b1b4c4c0647c8ae14dd4bb6478ed9a25434cca33087925f1b681e92b9c0",
+          "latencyMs": 41.61650000000009,
+          "recordedAt": "2026-09-05T10:00:23.653Z"
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill",
+          "path": "/maplestory/v1/character/link-skill",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/1aa845a4a8fea8136787db63dc46ed5a75f6f650c21fa265804f8ffe9eeaf2c1.body",
+          "sha256": "1aa845a4a8fea8136787db63dc46ed5a75f6f650c21fa265804f8ffe9eeaf2c1",
+          "latencyMs": 33.99683300000015,
+          "recordedAt": "2026-09-05T10:00:23.664Z"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix",
+          "path": "/maplestory/v1/character/vmatrix",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/6a1822e5635a9a5aa3ca879eba5d42d8c131acc64146268638d80580208363cb.body",
+          "sha256": "6a1822e5635a9a5aa3ca879eba5d42d8c131acc64146268638d80580208363cb",
+          "latencyMs": 33.20783400000005,
+          "recordedAt": "2026-09-05T10:00:23.687Z"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix",
+          "path": "/maplestory/v1/character/hexamatrix",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/6b1e240df2c9dda35f94cd96c40799364facaaeb401eaf4e734bd646a436b7f8.body",
+          "sha256": "6b1e240df2c9dda35f94cd96c40799364facaaeb401eaf4e734bd646a436b7f8",
+          "latencyMs": 27.48329099999978,
+          "recordedAt": "2026-09-05T10:00:23.694Z"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat",
+          "path": "/maplestory/v1/character/hexamatrix-stat",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/62c41a93f20386ec330325e359bf431b06099cd6e3c11d019c92482e6058b9e6.body",
+          "sha256": "62c41a93f20386ec330325e359bf431b06099cd6e3c11d019c92482e6058b9e6",
+          "latencyMs": 29.058583999999883,
+          "recordedAt": "2026-09-05T10:00:23.717Z"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion",
+          "path": "/maplestory/v1/user/union",
+          "query": {
+            "ocid": "3adcab5095d3fec4a03b2e8535d60f1aefe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-3/a3b178c41d15f619e5d86d7301ceadac744963f9b5cc50611018c00ccbb5a570.body",
+          "sha256": "a3b178c41d15f619e5d86d7301ceadac744963f9b5cc50611018c00ccbb5a570",
+          "latencyMs": 28.404457999999977,
+          "recordedAt": "2026-09-05T10:00:23.722Z"
+        }
+      ]
+    },
+    {
+      "id": "party-4",
+      "character": {
+        "nickname": "무들",
+        "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증"
+      },
+      "responses": [
+        {
+          "responseId": "character-ocid",
+          "endpointId": "characterOcid",
+          "path": "/maplestory/v1/id",
+          "query": {
+            "character_name": "무들"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/cff35dbe7c07ed6d0f838d7066dc3a6dac6324c83002db3563cb2c330035a394.body",
+          "sha256": "cff35dbe7c07ed6d0f838d7066dc3a6dac6324c83002db3563cb2c330035a394",
+          "latencyMs": 55.79520900000011,
+          "recordedAt": "2026-09-05T10:00:23.779Z"
+        },
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic",
+          "path": "/maplestory/v1/character/basic",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/f6add1388bc0c014cc8a3abbdca722d95f139d62d25f26ed5c3d16664d127987.body",
+          "sha256": "f6add1388bc0c014cc8a3abbdca722d95f139d62d25f26ed5c3d16664d127987",
+          "latencyMs": 33.05770899999993,
+          "recordedAt": "2026-09-05T10:00:23.814Z"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity",
+          "path": "/maplestory/v1/character/popularity",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/899ccf3ed00f8d0c0f20d56b0dea87cd7507ec4a959a74fddf9b5d96549cb842.body",
+          "sha256": "899ccf3ed00f8d0c0f20d56b0dea87cd7507ec4a959a74fddf9b5d96549cb842",
+          "latencyMs": 32.34699999999998,
+          "recordedAt": "2026-09-05T10:00:23.814Z"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat",
+          "path": "/maplestory/v1/character/stat",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/6e2d0730b036e3a6ed5f5ebcdc947cee1000f0227c0f262ad69a685250ef7621.body",
+          "sha256": "6e2d0730b036e3a6ed5f5ebcdc947cee1000f0227c0f262ad69a685250ef7621",
+          "latencyMs": 34.132499999999936,
+          "recordedAt": "2026-09-05T10:00:23.850Z"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat",
+          "path": "/maplestory/v1/character/hyper-stat",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/b66f6772f6fe78584ad4c989a902d132afe407064c6d6cdaca8ce22893f3d74c.body",
+          "sha256": "b66f6772f6fe78584ad4c989a902d132afe407064c6d6cdaca8ce22893f3d74c",
+          "latencyMs": 28.89037499999995,
+          "recordedAt": "2026-09-05T10:00:23.844Z"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity",
+          "path": "/maplestory/v1/character/propensity",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/ecc34b0778b8857bab21f9821259b35fbcdd3134082b1b7d3ca552aa63f6a16b.body",
+          "sha256": "ecc34b0778b8857bab21f9821259b35fbcdd3134082b1b7d3ca552aa63f6a16b",
+          "latencyMs": 26.67475000000013,
+          "recordedAt": "2026-09-05T10:00:23.871Z"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility",
+          "path": "/maplestory/v1/character/ability",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/e558e45656bccfec9c69d92eff42f231415602d090b970df706403dca9d4ca8a.body",
+          "sha256": "e558e45656bccfec9c69d92eff42f231415602d090b970df706403dca9d4ca8a",
+          "latencyMs": 29.58783399999993,
+          "recordedAt": "2026-09-05T10:00:23.880Z"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment",
+          "path": "/maplestory/v1/character/item-equipment",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/85c27c5f7c42aaba466359ff2a06216d5b6b5db11dd436fb821c2b4996d5c3bd.body",
+          "sha256": "85c27c5f7c42aaba466359ff2a06216d5b6b5db11dd436fb821c2b4996d5c3bd",
+          "latencyMs": 58.45437500000003,
+          "recordedAt": "2026-09-05T10:00:23.931Z"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment",
+          "path": "/maplestory/v1/character/cashitem-equipment",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/d9637c496e0fa1a37a7697f0cbb51edaeddda0ebe82461c4bd32da5220599e5b.body",
+          "sha256": "d9637c496e0fa1a37a7697f0cbb51edaeddda0ebe82461c4bd32da5220599e5b",
+          "latencyMs": 42.004459,
+          "recordedAt": "2026-09-05T10:00:23.922Z"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment",
+          "path": "/maplestory/v1/character/symbol-equipment",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/6385b6aaa84bbac02a2ccee2900dae23e8b7fbe5e42ab966f78a4e86232714af.body",
+          "sha256": "6385b6aaa84bbac02a2ccee2900dae23e8b7fbe5e42ab966f78a4e86232714af",
+          "latencyMs": 34.40466700000002,
+          "recordedAt": "2026-09-05T10:00:23.957Z"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect",
+          "path": "/maplestory/v1/character/set-effect",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/7c86f494a38104cb5c63d226e51d293e29be29c6ce6254902e24c9afb0af20d5.body",
+          "sha256": "7c86f494a38104cb5c63d226e51d293e29be29c6ce6254902e24c9afb0af20d5",
+          "latencyMs": 58.40566599999988,
+          "recordedAt": "2026-09-05T10:00:23.990Z"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment",
+          "path": "/maplestory/v1/character/beauty-equipment",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/1ee277124aa15d9fdd1ea9e497054e9af0a635edc8db5610b2a3fdaad140fa74.body",
+          "sha256": "1ee277124aa15d9fdd1ea9e497054e9af0a635edc8db5610b2a3fdaad140fa74",
+          "latencyMs": 36.11733400000003,
+          "recordedAt": "2026-09-05T10:00:23.994Z"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment",
+          "path": "/maplestory/v1/character/android-equipment",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/b49378c3b4f1e48db858c0a8dde92b15d5de1b55744a19af24cb2dbc3e4cf329.body",
+          "sha256": "b49378c3b4f1e48db858c0a8dde92b15d5de1b55744a19af24cb2dbc3e4cf329",
+          "latencyMs": 31.193166999999903,
+          "recordedAt": "2026-09-05T10:00:24.022Z"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment",
+          "path": "/maplestory/v1/character/pet-equipment",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/da015597c4c36a88fabcdb702417584b26689d42ac7e1427842098ef436a9d12.body",
+          "sha256": "da015597c4c36a88fabcdb702417584b26689d42ac7e1427842098ef436a9d12",
+          "latencyMs": 30.797041000000263,
+          "recordedAt": "2026-09-05T10:00:24.026Z"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "path": "/maplestory/v1/character/skill",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d",
+            "character_skill_grade": "5"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/2ea5ce316df4f9415ca13851418169b20e5b8f78db58204cc5ffdb5bc81b3833.body",
+          "sha256": "2ea5ce316df4f9415ca13851418169b20e5b8f78db58204cc5ffdb5bc81b3833",
+          "latencyMs": 38.040250000000015,
+          "recordedAt": "2026-09-05T10:00:24.061Z"
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "path": "/maplestory/v1/character/skill",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d",
+            "character_skill_grade": "6"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/5f5bc90e567bc99d664a6d59a3e1bdb5015ceb028e49285cd836342a9b538f40.body",
+          "sha256": "5f5bc90e567bc99d664a6d59a3e1bdb5015ceb028e49285cd836342a9b538f40",
+          "latencyMs": 35.141625000000204,
+          "recordedAt": "2026-09-05T10:00:24.062Z"
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill",
+          "path": "/maplestory/v1/character/link-skill",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/693eba8c853a1d6fbc8e259704d2bf9e7490ab08f42636f0a6d77184c56bbd2b.body",
+          "sha256": "693eba8c853a1d6fbc8e259704d2bf9e7490ab08f42636f0a6d77184c56bbd2b",
+          "latencyMs": 34.58545800000002,
+          "recordedAt": "2026-09-05T10:00:24.096Z"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix",
+          "path": "/maplestory/v1/character/vmatrix",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/78fdc00ccb4bf1e8346751cf9b0b32dad05f4094873b53d56ad1b4e46d31afa2.body",
+          "sha256": "78fdc00ccb4bf1e8346751cf9b0b32dad05f4094873b53d56ad1b4e46d31afa2",
+          "latencyMs": 33.014250000000175,
+          "recordedAt": "2026-09-05T10:00:24.097Z"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix",
+          "path": "/maplestory/v1/character/hexamatrix",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/0f5822d702923659c0709296b534af374088dd30902ba9f83a254e56b27d4c88.body",
+          "sha256": "0f5822d702923659c0709296b534af374088dd30902ba9f83a254e56b27d4c88",
+          "latencyMs": 32.99162499999966,
+          "recordedAt": "2026-09-05T10:00:24.129Z"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat",
+          "path": "/maplestory/v1/character/hexamatrix-stat",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/e50497d8e1b8d447772d294da7cd8d7d19d8b42675c77c061e4709fef8f7fb15.body",
+          "sha256": "e50497d8e1b8d447772d294da7cd8d7d19d8b42675c77c061e4709fef8f7fb15",
+          "latencyMs": 37.85479200000009,
+          "recordedAt": "2026-09-05T10:00:24.136Z"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion",
+          "path": "/maplestory/v1/user/union",
+          "query": {
+            "ocid": "6e4316d1ac78f3270a86d794ee528d09efe8d04e6d233bd35cf2fabdeb93fb0d"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-4/349f99ce721cae7fe6ed76a571fa8e3d45ca249f3d4ba62c83846a3ba7691ebe.body",
+          "sha256": "349f99ce721cae7fe6ed76a571fa8e3d45ca249f3d4ba62c83846a3ba7691ebe",
+          "latencyMs": 61.64166599999999,
+          "recordedAt": "2026-09-05T10:00:24.192Z"
+        }
+      ]
+    },
+    {
+      "id": "party-5",
+      "character": {
+        "nickname": "믹끼유",
+        "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증"
+      },
+      "responses": [
+        {
+          "responseId": "character-ocid",
+          "endpointId": "characterOcid",
+          "path": "/maplestory/v1/id",
+          "query": {
+            "character_name": "믹끼유"
+          },
+          "status": 400,
+          "contentType": "application/json",
+          "bodyPath": "recordings/party-5/0b1019052e6afa0d6a8673d16af0c78ebf7950c00bf8a2b7e222d3375c0e815f.body",
+          "sha256": "0b1019052e6afa0d6a8673d16af0c78ebf7950c00bf8a2b7e222d3375c0e815f",
+          "latencyMs": 32.428750000000036,
+          "recordedAt": "2026-09-05T10:00:24.225Z",
+          "nexonErrorCode": "OPENAPI00004"
+        }
+      ]
+    },
+    {
+      "id": "party-6",
+      "character": {
+        "nickname": "버블볍",
+        "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증"
+      },
+      "responses": [
+        {
+          "responseId": "character-ocid",
+          "endpointId": "characterOcid",
+          "path": "/maplestory/v1/id",
+          "query": {
+            "character_name": "버블볍"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/4bacece95ac6f7ad9b1dbeadea97031f0265cdf58f2ca5224705576cdac3e847.body",
+          "sha256": "4bacece95ac6f7ad9b1dbeadea97031f0265cdf58f2ca5224705576cdac3e847",
+          "latencyMs": 96.50795800000014,
+          "recordedAt": "2026-09-05T10:00:24.322Z"
+        },
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic",
+          "path": "/maplestory/v1/character/basic",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/df07b76d6ebdaef1582cd315efd03a13e3ea4c779fee326f2ae2d8aa2208f9b4.body",
+          "sha256": "df07b76d6ebdaef1582cd315efd03a13e3ea4c779fee326f2ae2d8aa2208f9b4",
+          "latencyMs": 62.97400000000016,
+          "recordedAt": "2026-09-05T10:00:24.386Z"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity",
+          "path": "/maplestory/v1/character/popularity",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/d8b502a5b4c49c7954dbcc6631264e08bcb90aec765b4cf19770d5e650a1c92c.body",
+          "sha256": "d8b502a5b4c49c7954dbcc6631264e08bcb90aec765b4cf19770d5e650a1c92c",
+          "latencyMs": 31.279958999999963,
+          "recordedAt": "2026-09-05T10:00:24.357Z"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat",
+          "path": "/maplestory/v1/character/stat",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/d129e21dfefbc16c664590bbecba5d50d177eedad4640ffa328eaf879182ec0f.body",
+          "sha256": "d129e21dfefbc16c664590bbecba5d50d177eedad4640ffa328eaf879182ec0f",
+          "latencyMs": 35.55383299999994,
+          "recordedAt": "2026-09-05T10:00:24.393Z"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat",
+          "path": "/maplestory/v1/character/hyper-stat",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/a86fb66fb09cb117c25fa7a659481297ec3c26924af1ce2e13be8f63a645f1d5.body",
+          "sha256": "a86fb66fb09cb117c25fa7a659481297ec3c26924af1ce2e13be8f63a645f1d5",
+          "latencyMs": 36.02066700000023,
+          "recordedAt": "2026-09-05T10:00:24.423Z"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity",
+          "path": "/maplestory/v1/character/propensity",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/ecc34b0778b8857bab21f9821259b35fbcdd3134082b1b7d3ca552aa63f6a16b.body",
+          "sha256": "ecc34b0778b8857bab21f9821259b35fbcdd3134082b1b7d3ca552aa63f6a16b",
+          "latencyMs": 35.281790999999885,
+          "recordedAt": "2026-09-05T10:00:24.428Z"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility",
+          "path": "/maplestory/v1/character/ability",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/2d3932bdf399a6abbb23e4e2994320b9dc30f3ca8e2ff580be91474f19c470a0.body",
+          "sha256": "2d3932bdf399a6abbb23e4e2994320b9dc30f3ca8e2ff580be91474f19c470a0",
+          "latencyMs": 40.87579199999982,
+          "recordedAt": "2026-09-05T10:00:24.464Z"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment",
+          "path": "/maplestory/v1/character/item-equipment",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/dc6fad7cc6bd46707e86cc462cf1a95fe07bf5f3f381d4ef741c85e6f5f0186a.body",
+          "sha256": "dc6fad7cc6bd46707e86cc462cf1a95fe07bf5f3f381d4ef741c85e6f5f0186a",
+          "latencyMs": 62.31804199999988,
+          "recordedAt": "2026-09-05T10:00:24.494Z"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment",
+          "path": "/maplestory/v1/character/cashitem-equipment",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/9bf560532e3b1b873595b692ebc5250486d1b4e4526333ce4917c58e3399967e.body",
+          "sha256": "9bf560532e3b1b873595b692ebc5250486d1b4e4526333ce4917c58e3399967e",
+          "latencyMs": 46.26200000000017,
+          "recordedAt": "2026-09-05T10:00:24.512Z"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment",
+          "path": "/maplestory/v1/character/symbol-equipment",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/37899f0b89ab9f2fe8e4f5ea3e16bb7d3fe9901d385f8fcca0dde4ddf6021368.body",
+          "sha256": "37899f0b89ab9f2fe8e4f5ea3e16bb7d3fe9901d385f8fcca0dde4ddf6021368",
+          "latencyMs": 31.63799999999992,
+          "recordedAt": "2026-09-05T10:00:24.527Z"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect",
+          "path": "/maplestory/v1/character/set-effect",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/b388fc6646c750a190f12a06376c378f9a30b4564d5067e14c23c0fb041acb69.body",
+          "sha256": "b388fc6646c750a190f12a06376c378f9a30b4564d5067e14c23c0fb041acb69",
+          "latencyMs": 40.96129200000041,
+          "recordedAt": "2026-09-05T10:00:24.553Z"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment",
+          "path": "/maplestory/v1/character/beauty-equipment",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/65fb27e9996d91461c9fbb021c18c0e02d2181a85942af87129220a36c72ef69.body",
+          "sha256": "65fb27e9996d91461c9fbb021c18c0e02d2181a85942af87129220a36c72ef69",
+          "latencyMs": 37.84233300000005,
+          "recordedAt": "2026-09-05T10:00:24.565Z"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment",
+          "path": "/maplestory/v1/character/android-equipment",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/346c30351f97fd08c761c1e0d9c7c8454216ffe57441f013e46aeed5c4623dc3.body",
+          "sha256": "346c30351f97fd08c761c1e0d9c7c8454216ffe57441f013e46aeed5c4623dc3",
+          "latencyMs": 56.34491700000035,
+          "recordedAt": "2026-09-05T10:00:24.610Z"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment",
+          "path": "/maplestory/v1/character/pet-equipment",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/6593e1068ded8147ff63040d266a3b8da666e31b56a51c51bd5898fcef3d03ca.body",
+          "sha256": "6593e1068ded8147ff63040d266a3b8da666e31b56a51c51bd5898fcef3d03ca",
+          "latencyMs": 38.19062499999973,
+          "recordedAt": "2026-09-05T10:00:24.604Z"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "path": "/maplestory/v1/character/skill",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1",
+            "character_skill_grade": "5"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/664760e320afee88229b09b1130e6b0321a6777efdc09176e7f5c20d5fc46a5c.body",
+          "sha256": "664760e320afee88229b09b1130e6b0321a6777efdc09176e7f5c20d5fc46a5c",
+          "latencyMs": 40.00187499999993,
+          "recordedAt": "2026-09-05T10:00:24.645Z"
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "path": "/maplestory/v1/character/skill",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1",
+            "character_skill_grade": "6"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/94f5cb26dec423cf89f231eaea5fb9460ae3930ed0894e47911ca6dd5d996ab4.body",
+          "sha256": "94f5cb26dec423cf89f231eaea5fb9460ae3930ed0894e47911ca6dd5d996ab4",
+          "latencyMs": 45.20570899999984,
+          "recordedAt": "2026-09-05T10:00:24.656Z"
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill",
+          "path": "/maplestory/v1/character/link-skill",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/2fcc9f7a86fda8d0f5de7078d61b48df18dc28defe93a3942bce813bc7e4b1e4.body",
+          "sha256": "2fcc9f7a86fda8d0f5de7078d61b48df18dc28defe93a3942bce813bc7e4b1e4",
+          "latencyMs": 45.93241699999999,
+          "recordedAt": "2026-09-05T10:00:24.692Z"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix",
+          "path": "/maplestory/v1/character/vmatrix",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/0dbc7f3f82eca6eda350e2ed0499580485f3350a006a3847b1347a36be9c1d15.body",
+          "sha256": "0dbc7f3f82eca6eda350e2ed0499580485f3350a006a3847b1347a36be9c1d15",
+          "latencyMs": 59.41849999999977,
+          "recordedAt": "2026-09-05T10:00:24.716Z"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix",
+          "path": "/maplestory/v1/character/hexamatrix",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/dec7860ca6160fd65e75d9348687b97a33a4e80202acdfcad29cb88467beadb9.body",
+          "sha256": "dec7860ca6160fd65e75d9348687b97a33a4e80202acdfcad29cb88467beadb9",
+          "latencyMs": 33.93741600000021,
+          "recordedAt": "2026-09-05T10:00:24.726Z"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat",
+          "path": "/maplestory/v1/character/hexamatrix-stat",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/545fa02c041a66f9cc032f9df2a10911dda61381a6d18266fa910b71697d5e43.body",
+          "sha256": "545fa02c041a66f9cc032f9df2a10911dda61381a6d18266fa910b71697d5e43",
+          "latencyMs": 29.427208999999948,
+          "recordedAt": "2026-09-05T10:00:24.746Z"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion",
+          "path": "/maplestory/v1/user/union",
+          "query": {
+            "ocid": "2552322319011b0e2b536efb56f0a9d1"
+          },
+          "status": 200,
+          "contentType": "application/json;charset=UTF-8",
+          "bodyPath": "recordings/party-6/dc38b410b8e401b7f630e67eeff44d9e45e490c4bfb189ad201bcc279da20497.body",
+          "sha256": "dc38b410b8e401b7f630e67eeff44d9e45e490c4bfb189ad201bcc279da20497",
+          "latencyMs": 28.10162500000024,
+          "recordedAt": "2026-09-05T10:00:24.755Z"
+        }
+      ]
+    }
+  ]
+}

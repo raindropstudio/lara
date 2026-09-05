@@ -261,6 +261,50 @@ class RecorderTransport implements NexonTransport {
 }
 
 describe('fixture recorder', () => {
+  it('ID 조회의 HTTP 실패를 보존하고 다음 캐릭터 기록을 계속한다', async () => {
+    const directory = await mkdtemp(join(tmpdir(), 'lara-nexon-id-failure-'))
+    temporaryDirectories.push(directory)
+    const base = new RecorderTransport()
+    const transport: NexonTransport = {
+      async execute(request) {
+        const response = await base.execute(request)
+        if (request.query.character_name !== 'missing') return response
+        if (response.kind !== 'response') throw new Error('응답이 필요합니다.')
+        return {
+          ...response,
+          status: 400,
+          ok: false,
+          nexonErrorCode: 'OPENAPI00004',
+          body: new TextEncoder().encode('{"error":{"name":"OPENAPI00004"}}'),
+        }
+      },
+    }
+    const result = await recordFixturePlan(
+      {
+        schemaVersion: 1,
+        cases: ['missing', 'available'].map((nickname) => ({
+          id: nickname,
+          nickname,
+          reason: '캐릭터별 실패 격리',
+          requests: [{ responseId: 'basic', endpointId: 'characterBasic' }],
+        })),
+      },
+      join(directory, 'recorded'),
+      new NexonClient(transport),
+    )
+    const manifest = parseFixtureManifest(
+      JSON.parse(await readFile(result.manifestPath, 'utf8')),
+    )
+    expect(manifest.cases.map((entry) => entry.responses.length)).toEqual([
+      1, 2,
+    ])
+    expect(manifest.cases[0]?.responses[0]).toMatchObject({
+      status: 400,
+      nexonErrorCode: 'OPENAPI00004',
+    })
+    expect((await verifyFixtureManifest(result.manifestPath)).valid).toBe(true)
+  })
+
   it('id→ocid 이후 제한 동시성으로 exact body와 hash를 기록한다', async () => {
     const temporaryDirectory = await mkdtemp(
       join(tmpdir(), 'lara-nexon-fixtures-'),

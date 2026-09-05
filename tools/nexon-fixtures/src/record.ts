@@ -199,6 +199,13 @@ export const recordFixturePlan = async (
   try {
     const fixtureCases: FixtureCase[] = []
     for (const fixtureCase of plan.cases) {
+      const character: FixtureCase['character'] = {
+        nickname: fixtureCase.nickname,
+        reason: fixtureCase.reason,
+      }
+      if (fixtureCase.worldName !== undefined) {
+        character.worldName = fixtureCase.worldName
+      }
       const idResult = requireResponse(
         await client.request('characterOcid', {
           characterName: fixtureCase.nickname,
@@ -211,6 +218,15 @@ export const recordFixturePlan = async (
         'character-ocid',
         idResult,
       )
+      // ID 조회 실패도 재생 가능한 응답으로 보존하고 다음 캐릭터를 기록한다.
+      if (!idResult.ok) {
+        fixtureCases.push({
+          id: fixtureCase.id,
+          character,
+          responses: [idResponse],
+        })
+        continue
+      }
       const ocid = extractOcid(idResult)
 
       const responses = await mapLimit(
@@ -229,13 +245,6 @@ export const recordFixturePlan = async (
           )
         },
       )
-      const character: FixtureCase['character'] = {
-        nickname: fixtureCase.nickname,
-        reason: fixtureCase.reason,
-      }
-      if (fixtureCase.worldName !== undefined) {
-        character.worldName = fixtureCase.worldName
-      }
       fixtureCases.push({
         id: fixtureCase.id,
         character,

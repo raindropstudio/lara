@@ -1,0 +1,564 @@
+{
+  "schemaVersion": 1,
+  "concurrency": 2,
+  "cases": [
+    {
+      "id": "party-1",
+      "nickname": "빙캔",
+      "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증",
+      "requests": [
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "5"
+          }
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "6"
+          }
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion"
+        }
+      ]
+    },
+    {
+      "id": "party-2",
+      "nickname": "소주에보드카",
+      "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증",
+      "requests": [
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "5"
+          }
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "6"
+          }
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion"
+        }
+      ]
+    },
+    {
+      "id": "party-3",
+      "nickname": "섭주",
+      "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증",
+      "requests": [
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "5"
+          }
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "6"
+          }
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion"
+        }
+      ]
+    },
+    {
+      "id": "party-4",
+      "nickname": "무들",
+      "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증",
+      "requests": [
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "5"
+          }
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "6"
+          }
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion"
+        }
+      ]
+    },
+    {
+      "id": "party-5",
+      "nickname": "믹끼유",
+      "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증",
+      "requests": [
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "5"
+          }
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "6"
+          }
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion"
+        }
+      ]
+    },
+    {
+      "id": "party-6",
+      "nickname": "버블볍",
+      "reason": "사용자가 지정한 Figma 군장검사 화면의 캐릭터로 실제 응답 회귀 검증",
+      "requests": [
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "5"
+          }
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "6"
+          }
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion"
+        }
+      ]
+    }
+  ]
+}
