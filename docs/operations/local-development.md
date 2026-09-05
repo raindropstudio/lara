@@ -81,3 +81,14 @@ pnpm infra:down
 ```
 
 `infra:down`은 container만 중지하고 volume은 보존한다. volume 삭제는 복구할 수 있는 데이터가 없음을 확인한 사람이 별도로 수행하며 자동화하지 않는다.
+
+## Nexon 호출 없는 화면 미리보기
+
+MongoDB·Redis·API 키 없이 군장검사의 성공·부분 자료·오류를 확인할 때 두 터미널에서 실행한다. 기존 웹 개발 서버가 실행 중이라면 먼저 종료한다.
+
+```sh
+pnpm --filter @lara/api dev:preview
+NUXT_PUBLIC_API_BASE_URL=http://127.0.0.1:3002 pnpm --filter @lara/web exec nuxt dev --port 3003
+```
+
+`http://localhost:3003/inspection`에서 `데모라라, 데모비숍, 데모부분`을 추가한다. 데모 자료는 실제 캐릭터가 아닌 합성 데이터로, 기본 정보·스탯·장비·유니온만 제공한다. `데모부분`은 스탯을 누락하며 목록에 없는 이름은 수집 오류를 반환한다. `데모제로, 데모궁수, 데모도적`으로 최대 6명 상태를 확인할 수 있다. 이미지가 없으면 기존 로고를 대체 이미지로 사용한다. API는 3002 포트의 메모리 저장소만 사용하며 재시작하면 초기화된다.
