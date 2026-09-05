@@ -10,15 +10,17 @@
 ## 표준 명령
 
 - 설치: `corepack enable && pnpm install`
-- API 개발: `pnpm dev`
+- API와 웹 개발: `pnpm dev`
+- 단일 앱 개발: `pnpm dev:api`, `pnpm dev:web`, `pnpm dev:collector`
 - 전체 검증: `pnpm check`
 - 변경 영향 검증: `pnpm nx affected -t lint,typecheck,test,build`
 
 ## 경계
 
 - 앱은 패키지에 의존할 수 있지만 패키지는 앱에 의존하지 않는다.
-- 앱 사이의 직접 import를 금지한다.
-- 공유 HTTP·SSE 계약은 `packages/contracts`에 둔다.
+- 앱 사이의 런타임 import를 금지한다.
+- 웹은 `@lara/api/eden`에서 Elysia `App` 타입만 import할 수 있다. 이 경계에 런타임 값이나 내부 구현 타입을 노출하지 않는다.
+- HTTP 계약을 미리 별도 패키지로 복제하지 않는다. 큐 작업과 저장 형식처럼 HTTP 밖에서도 쓰는 안정된 계약만 공유 패키지로 둔다.
 - Nexon 원본 형식을 웹이나 공개 API 계약에 노출하지 않는다.
 - 경계가 안정됐거나 두 번째 사용처가 생긴 코드만 `packages/`로 옮긴다.
 

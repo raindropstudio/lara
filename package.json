@@ -10,14 +10,20 @@
   },
   "scripts": {
     "build": "nx run-many -t build --all",
-    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
-    "dev": "pnpm dev:api",
+    "check": "pnpm format:check && pnpm fixtures:verify && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "dev": "nx run-many -t dev --projects=@lara/api,@lara/web --parallel=2",
     "dev:api": "nx run @lara/api:dev",
+    "dev:collector": "nx run @lara/collector:dev",
+    "dev:web": "nx run @lara/web:dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "fixtures:verify": "pnpm --filter @lara/nexon-fixtures verify",
     "graph": "nx graph",
+    "infra:down": "docker compose down",
+    "infra:up": "docker compose up -d --wait",
     "lint": "nx run-many -t lint --all",
     "test": "nx run-many -t test --all",
+    "test:integration": "RUN_MONGO_TESTS=1 RUN_NETWORK_TESTS=1 RUN_REDIS_TESTS=1 nx run-many -t test --projects=@lara/data-store,@lara/jobs,@lara/api,@lara/collector --skip-nx-cache",
     "typecheck": "nx run-many -t typecheck --all"
   },
   "devDependencies": {

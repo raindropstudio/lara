@@ -9,3 +9,5 @@
 - `operations/`: 운영 절차와 runbook
 
 코드, 테스트, lint 규칙으로 강제하는 구현 세부 사항은 중복 기록하지 않는다.
+
+현재 마이그레이션 순서와 단계별 완료 기준은 [백엔드 우선 마이그레이션](product/backend-first-migration.md)을 기준으로 한다.

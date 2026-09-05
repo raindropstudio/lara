@@ -16,7 +16,7 @@
 
 ## 결정
 
-`@elysiajs/node`와 Elysia를 사용한다. 불필요한 framework 추상화를 만들지 않고 실제 상태 확인 경로, build, test로 호환성을 검증한다.
+공식 Node adapter와 Elysia를 사용한다. 불필요한 framework 추상화를 만들지 않고 실제 상태 확인 경로, build, test로 호환성을 검증한다. 현재 패키지 이름은 `@elysia/node`다.
 
 공개 계약은 framework에 종속시키지 않는다. 첫 API 기능을 구현할 때 공유 응답과 event schema를 `packages/contracts`로 옮긴다.
 

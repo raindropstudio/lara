@@ -1,0 +1,66 @@
+{
+  "name": "@lara/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 3000",
+    "generate": "nuxt generate",
+    "lint": "eslint .",
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview --port 3000",
+    "start": "node .output/server/index.mjs",
+    "test": "vitest run",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@elysia/eden": "catalog:",
+    "@floating-ui/dom": "1.8.0",
+    "@floating-ui/vue": "2.0.1",
+    "@letstri/kinesis": "0.2.1",
+    "@nuxt/eslint": "1.17.0",
+    "@nuxt/scripts": "1.3.8",
+    "@nuxtjs/tailwindcss": "6.14.0",
+    "@pinia/nuxt": "1.0.2",
+    "@vueuse/core": "14.4.0",
+    "@vueuse/nuxt": "14.4.0",
+    "chart.js": "4.5.1",
+    "hangul-search": "1.4.5",
+    "hangul-typing-animation": "1.1.5",
+    "humanize-duration": "3.34.1",
+    "nuxt": "4.5.2",
+    "nuxt-headlessui": "1.2.2",
+    "pinia": "4.0.3",
+    "pinia-plugin-persistedstate": "4.7.1",
+    "pretendard": "1.3.9",
+    "tailwindcss": "3.4.19",
+    "typingchanger_easy": "1.0.18",
+    "vue": "3.5.42",
+    "vue-chartjs": "5.3.4",
+    "vue-confetti-explosion": "1.0.2"
+  },
+  "devDependencies": {
+    "@lara/api": "workspace:*",
+    "@nuxt/schema": "4.5.2",
+    "@types/humanize-duration": "3.27.4",
+    "eslint": "catalog:",
+    "postcss": "8.5.26",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vue-tsc": "3.3.11"
+  },
+  "nx": {
+    "tags": [
+      "scope:web",
+      "type:app"
+    ],
+    "targets": {
+      "build": {
+        "outputs": [
+          "{projectRoot}/.output"
+        ]
+      }
+    }
+  }
+}

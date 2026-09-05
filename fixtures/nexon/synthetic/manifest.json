@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "source": "synthetic",
+  "recordedAt": "2026-08-31T00:00:00.000Z",
+  "cases": [
+    {
+      "id": "normal",
+      "character": {
+        "nickname": "fixture-normal",
+        "worldName": "스카니아",
+        "reason": "정상 응답의 최소 기준선"
+      },
+      "responses": [
+        {
+          "responseId": "character-ocid",
+          "endpointId": "characterOcid",
+          "path": "/maplestory/v1/id",
+          "query": {
+            "character_name": "fixture-normal"
+          },
+          "status": 200,
+          "contentType": "application/json; charset=utf-8",
+          "bodyPath": "recordings/normal/c7a806370a038e701e39a2d2ce47d76d1b46eb5dc04c866158fd46c3911a5b73.body",
+          "sha256": "c7a806370a038e701e39a2d2ce47d76d1b46eb5dc04c866158fd46c3911a5b73",
+          "latencyMs": 0,
+          "recordedAt": "2026-08-31T00:00:00.000Z"
+        },
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic",
+          "path": "/maplestory/v1/character/basic",
+          "query": {
+            "ocid": "synthetic-normal"
+          },
+          "status": 200,
+          "contentType": "application/json; charset=utf-8",
+          "bodyPath": "recordings/normal/059b361c0892cb85179b39a0f3b84bd7305c690f258b5d7ef06e295c992aba3c.body",
+          "sha256": "059b361c0892cb85179b39a0f3b84bd7305c690f258b5d7ef06e295c992aba3c",
+          "latencyMs": 0,
+          "recordedAt": "2026-08-31T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "partial-error",
+      "character": {
+        "nickname": "fixture-partial",
+        "worldName": "챌린저스",
+        "reason": "한 endpoint 오류가 정상 endpoint를 무효화하지 않는 사례"
+      },
+      "responses": [
+        {
+          "responseId": "character-ocid",
+          "endpointId": "characterOcid",
+          "path": "/maplestory/v1/id",
+          "query": {
+            "character_name": "fixture-partial"
+          },
+          "status": 200,
+          "contentType": "application/json",
+          "bodyPath": "recordings/partial/f9a85a6ba66673198e4d9b21d188f87ebd0b3f7c0a0ea810c262165eb8511413.body",
+          "sha256": "f9a85a6ba66673198e4d9b21d188f87ebd0b3f7c0a0ea810c262165eb8511413",
+          "latencyMs": 0,
+          "recordedAt": "2026-08-31T00:00:00.000Z"
+        },
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic",
+          "path": "/maplestory/v1/character/basic",
+          "query": {
+            "ocid": "synthetic-partial"
+          },
+          "status": 200,
+          "contentType": "application/json",
+          "bodyPath": "recordings/partial/d2fa1afe7585909fbd50d075fc7514c4efb5b93e2699836f1d2737c81c5c93da.body",
+          "sha256": "d2fa1afe7585909fbd50d075fc7514c4efb5b93e2699836f1d2737c81c5c93da",
+          "latencyMs": 0,
+          "recordedAt": "2026-08-31T00:00:00.000Z"
+        },
+        {
+          "responseId": "character-stat-rate-limit",
+          "endpointId": "characterStat",
+          "path": "/maplestory/v1/character/stat",
+          "query": {
+            "ocid": "synthetic-partial"
+          },
+          "status": 429,
+          "contentType": "application/json",
+          "nexonErrorCode": "OPENAPI00007",
+          "retryAfter": "1",
+          "bodyPath": "recordings/partial/6dc11cc3abbce9c6419f0f86cb50510b8918174c4cf0a3ce6a4ab1969a655484.body",
+          "sha256": "6dc11cc3abbce9c6419f0f86cb50510b8918174c4cf0a3ce6a4ab1969a655484",
+          "latencyMs": 0,
+          "recordedAt": "2026-08-31T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "invalid-json",
+      "character": {
+        "nickname": "fixture-invalid-json",
+        "reason": "JSON content type이지만 body가 손상된 사례"
+      },
+      "responses": [
+        {
+          "responseId": "character-ocid",
+          "endpointId": "characterOcid",
+          "path": "/maplestory/v1/id",
+          "query": {
+            "character_name": "fixture-invalid-json"
+          },
+          "status": 200,
+          "contentType": "application/json",
+          "bodyPath": "recordings/invalid-json/e4e37dd8b68f8a8534a62e47587494e738cef1ec9b1be7864e16d002245f4edb.body",
+          "sha256": "e4e37dd8b68f8a8534a62e47587494e738cef1ec9b1be7864e16d002245f4edb",
+          "latencyMs": 0,
+          "recordedAt": "2026-08-31T00:00:00.000Z"
+        },
+        {
+          "responseId": "character-ability-invalid-json",
+          "endpointId": "characterAbility",
+          "path": "/maplestory/v1/character/ability",
+          "query": {
+            "ocid": "synthetic-invalid-json"
+          },
+          "status": 200,
+          "contentType": "application/json",
+          "bodyPath": "recordings/invalid-json/84122334b2f36d04724b62de351a985bfae2359bf755f29e3ad7e87c8cef1017.body",
+          "sha256": "84122334b2f36d04724b62de351a985bfae2359bf755f29e3ad7e87c8cef1017",
+          "latencyMs": 0,
+          "recordedAt": "2026-08-31T00:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}

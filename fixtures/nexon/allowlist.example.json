@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "concurrency": 1,
+  "cases": [
+    {
+      "id": "bishop-baseline",
+      "nickname": "소주에보드카",
+      "reason": "기본 캐릭터 정상 기준선",
+      "requests": [
+        {
+          "responseId": "character-basic",
+          "endpointId": "characterBasic"
+        },
+        {
+          "responseId": "character-popularity",
+          "endpointId": "characterPopularity"
+        },
+        {
+          "responseId": "character-stat",
+          "endpointId": "characterStat"
+        },
+        {
+          "responseId": "character-hyper-stat",
+          "endpointId": "characterHyperStat"
+        },
+        {
+          "responseId": "character-propensity",
+          "endpointId": "characterPropensity"
+        },
+        {
+          "responseId": "character-ability",
+          "endpointId": "characterAbility"
+        },
+        {
+          "responseId": "character-item-equipment",
+          "endpointId": "characterItemEquipment"
+        },
+        {
+          "responseId": "character-cashitem-equipment",
+          "endpointId": "characterCashItemEquipment"
+        },
+        {
+          "responseId": "character-symbol-equipment",
+          "endpointId": "characterSymbolEquipment"
+        },
+        {
+          "responseId": "character-set-effect",
+          "endpointId": "characterSetEffect"
+        },
+        {
+          "responseId": "character-beauty-equipment",
+          "endpointId": "characterBeautyEquipment"
+        },
+        {
+          "responseId": "character-android-equipment",
+          "endpointId": "characterAndroidEquipment"
+        },
+        {
+          "responseId": "character-pet-equipment",
+          "endpointId": "characterPetEquipment"
+        },
+        {
+          "responseId": "character-skill-5",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "5"
+          }
+        },
+        {
+          "responseId": "character-skill-6",
+          "endpointId": "characterSkill",
+          "params": {
+            "skillGrade": "6"
+          }
+        },
+        {
+          "responseId": "character-link-skill",
+          "endpointId": "characterLinkSkill"
+        },
+        {
+          "responseId": "character-vmatrix",
+          "endpointId": "characterVMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix",
+          "endpointId": "characterHexaMatrix"
+        },
+        {
+          "responseId": "character-hexamatrix-stat",
+          "endpointId": "characterHexaMatrixStat"
+        },
+        {
+          "responseId": "user-union",
+          "endpointId": "userUnion"
+        }
+      ]
+    }
+  ]
+}

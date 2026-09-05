@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "exports": "./dist/main.js",
+  "exports": {
+    ".": "./dist/main.js",
+    "./eden": {
+      "types": "./src/eden.ts",
+      "default": "./dist/eden.js"
+    }
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "dev": "tsx watch src/main.ts",
@@ -13,10 +19,15 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@elysiajs/node": "catalog:",
+    "@elysia/cors": "catalog:",
+    "@elysia/node": "catalog:",
+    "@lara/data-store": "workspace:*",
+    "@lara/jobs": "workspace:*",
     "elysia": "catalog:"
   },
   "devDependencies": {
+    "@elysia/eden": "catalog:",
+    "@lara/character-parser": "workspace:*",
     "@types/node": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",

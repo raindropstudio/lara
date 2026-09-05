@@ -5,16 +5,26 @@ packages:
 
 allowBuilds:
   esbuild: true
+  msgpackr-extract: false
   nx: true
+  unrs-resolver: true
+
+overrides:
+  exact-mirror: 0.2.7
 
 catalog:
-  '@elysiajs/node': 1.4.5
+  '@elysia/cors': 1.4.2
+  '@elysia/eden': 1.4.10
+  '@elysia/node': 1.4.6
   '@eslint/js': 10.0.1
   '@types/node': 24.13.3
+  bullmq: 6.3.2
   elysia: 1.4.30
   eslint: 10.9.1
   nx: 23.1.2
+  mongodb: 7.6.0
   prettier: 3.9.6
+  redis: 6.2.1
   tsx: 4.20.6
   typescript: 6.0.3
   typescript-eslint: 8.68.0
