@@ -7,7 +7,9 @@
   >
     <table
       class="w-full table-fixed border-collapse text-center text-sm text-lucidviolet-600"
-      :style="{ minWidth: `${120 + entries.length * 180}px` }"
+      :style="{
+        minWidth: entries.length > 1 ? `${120 + entries.length * 180}px` : '0',
+      }"
     >
       <caption class="sr-only">
         캐릭터 능력치와 현재 착용 장비 비교

@@ -17,7 +17,8 @@
     "start": "node dist/main.js",
     "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "dev:preview": "tsx watch src/preview.ts"
+    "dev:preview": "tsx watch src/preview.ts",
+    "dev:recorded": "tsx watch src/recorded-preview.ts"
   },
   "dependencies": {
     "@elysia/cors": "catalog:",
@@ -32,7 +33,10 @@
     "@types/node": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "@lara/character-pipeline": "workspace:*",
+    "@lara/nexon-client": "workspace:*",
+    "@lara/nexon-fixtures": "workspace:*"
   },
   "nx": {
     "tags": [

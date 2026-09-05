@@ -8,6 +8,7 @@ import {
   parseItemEquipment,
   parsePetEquipment,
   parseStat,
+  parseSymbol,
 } from './index.js'
 
 const json = (value: unknown) => JSON.stringify(value)
@@ -227,4 +228,75 @@ describe('장비 프리셋 복구', () => {
       result.value?.find((preset) => preset.active)?.itemEquipmentInfo,
     ).toEqual([])
   })
+})
+
+describe('실제 응답에서 확인한 빈 슬롯', () => {
+  it('null 스탯은 누락으로 보존하고 잘못된 문자열은 부분 오류로 남긴다', () => {
+    const result = parseStat(
+      json({
+        final_stat: [
+          { stat_name: 'MP', stat_value: null },
+          { stat_name: 'STR', stat_value: '0' },
+          { stat_name: 'DEX', stat_value: 'invalid' },
+        ],
+      }),
+    )
+    expect(result.status).toBe('partial')
+    expect(result.value).toEqual({ str: 0 })
+    expect(result.issues).toHaveLength(1)
+    expect(result.issues[0]?.path).toBe('$.final_stat[2].stat_value')
+  })
+
+  it('HEXA 이름이 없는데 강화 수치가 있으면 미사용 슬롯으로 숨기지 않는다', () => {
+    const result = parseHexaStat(
+      json({
+        character_hexa_stat_core: [
+          {
+            slot_id: '0',
+            main_stat_name: null,
+            sub_stat_name_1: null,
+            sub_stat_name_2: null,
+            main_stat_level: 1,
+            sub_stat_level_1: 0,
+            sub_stat_level_2: 0,
+            stat_grade: 1,
+          },
+        ],
+      }),
+    )
+    expect(result.status).toBe('partial')
+    expect(
+      result.issues.some((issue) => issue.path.endsWith('main_stat_name')),
+    ).toBe(true)
+  })
+})
+
+it('심볼의 소수 퍼센트를 보존하고 잘못된 퍼센트는 오류로 남긴다', () => {
+  const symbol = {
+    symbol_name: '테스트 심볼',
+    symbol_force: '10',
+    symbol_level: 1,
+    symbol_str: '0',
+    symbol_dex: '0',
+    symbol_int: '0',
+    symbol_luk: '0',
+    symbol_hp: '0',
+    symbol_drop_rate: '10%',
+    symbol_meso_rate: '2.5%',
+    symbol_exp_rate: '0%',
+    symbol_growth_count: 0,
+    symbol_require_growth_count: 1,
+  }
+  const result = parseSymbol(json({ symbol: [symbol] }))
+  expect(result.status).toBe('complete')
+  expect(result.value?.[0]).toMatchObject({
+    dropRate: 10,
+    mesoRate: 2.5,
+    expRate: 0,
+  })
+  const invalid = parseSymbol(
+    json({ symbol: [{ ...symbol, symbol_drop_rate: '10%%' }] }),
+  )
+  expect(invalid.status).toBe('partial')
+  expect(invalid.issues[0]?.path).toBe('$.symbol[0].symbol_drop_rate')
 })

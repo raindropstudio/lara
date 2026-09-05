@@ -2,6 +2,7 @@ export const getLargeCharacterImageUrl = (
   characterImageCode: string | undefined,
 ) => {
   if (!characterImageCode) return ''
+  if (/^https?:\/\//.test(characterImageCode)) return characterImageCode
   return (
     'https://open.api.nexon.com/static/maplestory/Character/180/' +
     characterImageCode +
@@ -13,6 +14,7 @@ export const getCharacterImageUrl = (
   characterImageCode: string | undefined,
 ) => {
   if (!characterImageCode) return ''
+  if (/^https?:\/\//.test(characterImageCode)) return characterImageCode
   return (
     'https://open.api.nexon.com/static/maplestory/Character/' +
     characterImageCode +
@@ -22,6 +24,7 @@ export const getCharacterImageUrl = (
 
 export const getItemImageUrl = (itemImageCode: string | undefined) => {
   if (!itemImageCode) return ''
+  if (/^https?:\/\//.test(itemImageCode)) return itemImageCode
   return (
     'https://open.api.nexon.com/static/maplestory/item/icon/' + itemImageCode
   )
@@ -29,6 +32,7 @@ export const getItemImageUrl = (itemImageCode: string | undefined) => {
 
 export const getSkillImageUrl = (skillImageCode: string | undefined) => {
   if (!skillImageCode) return ''
+  if (/^https?:\/\//.test(skillImageCode)) return skillImageCode
   return (
     'https://open.api.nexon.com/static/maplestory/skill/icon/' + skillImageCode
   )

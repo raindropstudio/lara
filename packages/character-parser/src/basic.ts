@@ -217,7 +217,12 @@ export const parseStat = (body: Uint8Array | string): ParseResult<Stat> => {
     const item = record(raw, path, context)
     if (!item) return
     const name = text(item.stat_name, `${path}.stat_name`, context)
-    const value = number(item.stat_value, `${path}.stat_value`, context)
+    const value = number(
+      item.stat_value,
+      `${path}.stat_value`,
+      context,
+      item.stat_value !== null,
+    )
     if (!name || value === undefined) return
     const key = statNames[name]
     if (!key) {

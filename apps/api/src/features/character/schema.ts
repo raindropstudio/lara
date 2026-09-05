@@ -204,7 +204,7 @@ const petEquipmentSchema = t.Object({
     ),
     petAutoSkill: t.Optional(
       t.Object({
-        skill1: t.String(),
+        skill1: t.Optional(t.String()),
         skill1Icon: t.Optional(t.String()),
         skill2: t.Optional(t.String()),
         skill2Icon: t.Optional(t.String()),

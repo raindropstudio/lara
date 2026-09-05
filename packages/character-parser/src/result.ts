@@ -1,4 +1,4 @@
-export const PARSER_VERSION = 'character-v1'
+export const PARSER_VERSION = 'character-v2'
 
 export type ParseStatus = 'complete' | 'partial' | 'failed'
 

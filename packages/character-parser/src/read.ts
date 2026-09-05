@@ -105,7 +105,7 @@ export const booleanFlag = (
 
 export const imageCode = (value: unknown) => {
   if (typeof value !== 'string') return undefined
-  const match = /\/item\/([^/?]+)/.exec(value)
+  const match = /\/item\/(?:icon\/)?([^/?]+)/.exec(value)
   return match?.[1] ?? value
 }
 

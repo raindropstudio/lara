@@ -242,7 +242,7 @@ export type PetEquipment = {
       magicPower?: number
     }
     petAutoSkill?: {
-      skill1: string
+      skill1?: string
       skill1Icon?: string
       skill2?: string
       skill2Icon?: string

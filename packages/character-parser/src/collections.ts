@@ -19,6 +19,16 @@ import type {
   SymbolInfo,
 } from './types.js'
 
+const symbolRate = (value: unknown, path: string, context: ParseContext) =>
+  number(
+    typeof value === 'string' && /^[+-]?\d+(?:\.\d+)?%$/.test(value)
+      ? value.slice(0, -1)
+      : value,
+    path,
+    context,
+    false,
+  )
+
 export const parseSymbol = (
   body: Uint8Array | string,
 ): ParseResult<SymbolInfo[]> => {
@@ -40,26 +50,20 @@ export const parseSymbol = (
       luk: integer(item.symbol_luk, `${path}.symbol_luk`, context),
       hp: integer(item.symbol_hp, `${path}.symbol_hp`, context),
       dropRate:
-        integer(
+        symbolRate(
           item.symbol_drop_rate,
           `${path}.symbol_drop_rate`,
           context,
-          false,
         ) ?? 0,
       mesoRate:
-        integer(
+        symbolRate(
           item.symbol_meso_rate,
           `${path}.symbol_meso_rate`,
           context,
-          false,
         ) ?? 0,
       expRate:
-        integer(
-          item.symbol_exp_rate,
-          `${path}.symbol_exp_rate`,
-          context,
-          false,
-        ) ?? 0,
+        symbolRate(item.symbol_exp_rate, `${path}.symbol_exp_rate`, context) ??
+        0,
       growthCount: integer(
         item.symbol_growth_count,
         `${path}.symbol_growth_count`,
@@ -234,7 +238,7 @@ export const parsePetEquipment = (
       const path = `$.${prefix}_equipment`
       const equipment = record(rawEquipment, path, context)
       const itemName = equipment
-        ? text(equipment.item_name, `${path}.item_name`, context)
+        ? text(equipment.item_name, `${path}.item_name`, context, false)
         : undefined
       if (equipment && itemName) {
         const mapped: NonNullable<PetEquipment['petInfo']['petEquipment']> = {
@@ -294,25 +298,21 @@ export const parsePetEquipment = (
     if (rawAutoSkill !== null && rawAutoSkill !== undefined) {
       const path = `$.${prefix}_auto_skill`
       const autoSkill = record(rawAutoSkill, path, context)
-      const skill1 = autoSkill
-        ? text(autoSkill.skill_1, `${path}.skill_1`, context)
-        : undefined
-      if (autoSkill && skill1) {
-        const mapped: NonNullable<PetEquipment['petInfo']['petAutoSkill']> = {
-          skill1,
+      if (autoSkill) {
+        const mapped: NonNullable<PetEquipment['petInfo']['petAutoSkill']> = {}
+        for (const slot of [1, 2] as const) {
+          const skill = text(
+            autoSkill[`skill_${slot}`],
+            `${path}.skill_${slot}`,
+            context,
+            false,
+          )
+          if (!skill) continue
+          mapped[`skill${slot}`] = skill
+          const icon = imageCode(autoSkill[`skill_${slot}_icon`])
+          if (icon) mapped[`skill${slot}Icon`] = icon
         }
-        const skill1Icon = imageCode(autoSkill.skill_1_icon)
-        if (skill1Icon) mapped.skill1Icon = skill1Icon
-        const skill2 = text(
-          autoSkill.skill_2,
-          `${path}.skill_2`,
-          context,
-          false,
-        )
-        if (skill2) mapped.skill2 = skill2
-        const skill2Icon = imageCode(autoSkill.skill_2_icon)
-        if (skill2Icon) mapped.skill2Icon = skill2Icon
-        petInfo.petAutoSkill = mapped
+        if (mapped.skill1 || mapped.skill2) petInfo.petAutoSkill = mapped
       }
     }
     result.push({ petNo, petInfo })
@@ -498,6 +498,19 @@ const mapHexaStat = (
 ): Omit<HexaStat, 'active'> | undefined => {
   const item = record(raw, path, context)
   if (!item) return undefined
+  // 미사용 HEXA 프리셋은 이름이 null이고 모든 강화 수치가 0이다.
+  if (
+    ['main_stat_name', 'sub_stat_name_1', 'sub_stat_name_2'].every(
+      (key) => item[key] === null,
+    ) &&
+    [
+      'main_stat_level',
+      'sub_stat_level_1',
+      'sub_stat_level_2',
+      'stat_grade',
+    ].every((key) => item[key] === 0)
+  )
+    return undefined
   const values = {
     hexaStatNo,
     presetNo: integer(item.slot_id, `${path}.slot_id`, context),

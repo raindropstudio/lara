@@ -13,7 +13,7 @@ export interface PetEquipmentInfo {
 
 // 펫 자동 스킬
 export interface PetAutoSkill {
-  skill1: string
+  skill1?: string
   skill1Icon?: string
   skill2?: string
   skill2Icon?: string

@@ -105,6 +105,15 @@ importers:
       '@lara/character-parser':
         specifier: workspace:*
         version: link:../../packages/character-parser
+      '@lara/character-pipeline':
+        specifier: workspace:*
+        version: link:../../packages/character-pipeline
+      '@lara/nexon-client':
+        specifier: workspace:*
+        version: link:../../packages/nexon-client
+      '@lara/nexon-fixtures':
+        specifier: workspace:*
+        version: link:../../tools/nexon-fixtures
       '@types/node':
         specifier: 'catalog:'
         version: 24.13.3
