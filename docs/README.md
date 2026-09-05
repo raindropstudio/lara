@@ -14,7 +14,7 @@
 
 | 작업 | 먼저 읽을 문서 |
 | --- | --- |
-| 설치, 기동, 합성 데이터 미리보기, 검증 | [로컬 개발](operations/local-development.md) |
+| 설치, 기동, 실제 응답 재생과 합성 보완, 검증 | [로컬 개발](operations/local-development.md) |
 | API 계약과 웹 연결 | [캐릭터 조회 API 호환성](specifications/character-api-compatibility.md), [Eden 결정](decisions/0004-use-eden-treaty-for-web-api.md) |
 | 군장검사와 비교 화면 | [군장검사](specifications/party-inspection.md) |
 | Nexon 원본 기록과 파싱 | [fixture 안내](../fixtures/nexon/README.md), [기록 도구](../tools/nexon-fixtures/README.md), [데이터 파이프라인](architecture/data-pipeline.md) |
