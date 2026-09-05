@@ -9,6 +9,8 @@ Nx와 pnpm 기반 모노레포로 재구축한다. 기존 프론트엔드와 백
 - Node.js 24 LTS. 전환 기간에는 Node.js 26까지 허용한다.
 - Corepack으로 설치한 pnpm 11.19.0
 
+화면만 작업할 때는 API 키와 로컬 DB가 필요 없는 [합성 데이터 미리보기](docs/operations/local-development.md#nexon-호출-없는-화면-미리보기)로 시작할 수 있다. 아래는 로컬 인프라를 사용하는 개발 환경의 최초 설정이다. 기존 `.env`가 있다면 복사 단계를 생략한다.
+
 ```sh
 corepack enable
 pnpm install

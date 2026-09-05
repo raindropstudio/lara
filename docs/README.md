@@ -10,4 +10,15 @@
 
 코드, 테스트, lint 규칙으로 강제하는 구현 세부 사항은 중복 기록하지 않는다.
 
-현재 마이그레이션 순서와 단계별 완료 기준은 [백엔드 우선 마이그레이션](product/backend-first-migration.md)을 기준으로 한다.
+## 작업별 시작점
+
+| 작업 | 먼저 읽을 문서 |
+| --- | --- |
+| 설치, 기동, 합성 데이터 미리보기, 검증 | [로컬 개발](operations/local-development.md) |
+| API 계약과 웹 연결 | [캐릭터 조회 API 호환성](specifications/character-api-compatibility.md), [Eden 결정](decisions/0004-use-eden-treaty-for-web-api.md) |
+| 군장검사와 비교 화면 | [군장검사](specifications/party-inspection.md) |
+| Nexon 원본 기록과 파싱 | [fixture 안내](../fixtures/nexon/README.md), [기록 도구](../tools/nexon-fixtures/README.md), [데이터 파이프라인](architecture/data-pipeline.md) |
+| 수집 장애와 운영 전환 | [collector 장애 대응](operations/collector-incidents.md), [전환 절차](operations/migration-cutover.md) |
+| 마이그레이션 범위와 남은 조건 | [백엔드 우선 마이그레이션](product/backend-first-migration.md) |
+
+기능 문서는 현재 동작과 한계를, 결정 기록은 당시 선택의 이유를 설명한다. 완료 여부와 실행 명령은 현재 코드·테스트·`package.json`에 대조한다. 과거 검증 기록을 이번 작업의 실행 결과로 사용하지 않는다.

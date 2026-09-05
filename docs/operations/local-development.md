@@ -42,7 +42,7 @@ pnpm dev
 
 `MONGODB_URI`를 지정하지 않으면 API는 재시작 시 사라지는 메모리 저장소를 사용한다. raw 저장과 collector를 검증할 때는 MongoDB를 사용한다.
 
-`GET /health`는 프로세스 생존만 확인하고 `GET /health/ready`는 MongoDB ping과 Redis ping이 모두 성공할 때만 200을 반환한다. Redis를 생략한 read-only 로컬 API는 readiness가 503인 것이 정상이다.
+`GET /health`는 프로세스 생존만 확인한다. 일반 API의 `GET /health/ready`는 선택한 저장소와 Redis가 모두 준비됐을 때 200을 반환하며 MongoDB 사용 시에는 ping으로 확인한다. Redis를 생략한 read-only 로컬 API는 readiness가 503인 것이 정상이다. 합성 미리보기 API의 readiness는 실제 MongoDB·Redis 연결을 증명하지 않는다.
 
 `pnpm dev`는 API와 web을 함께 실행한다. 한 앱만 확인할 때는 해당 명령을 사용한다.
 
@@ -61,6 +61,10 @@ pnpm dev:collector
 ```
 
 기본 `pnpm check`는 포트를 열거나 로컬 서비스를 요구하지 않으며 MongoDB, Redis, Node listener 통합 테스트는 skip한다. 로컬 인프라를 올린 뒤 모든 통합 테스트를 실행한다.
+
+수정 중에는 변경한 앱·패키지의 관련 검증을 먼저 실행하고 마무리에 `pnpm check`를 실행한다. `pnpm nx affected -t lint,typecheck,test,build`를 사용할 때는 비교할 base/head에 이번 작업 커밋이 포함되는지 확인한다. 커밋 후 작업 트리가 깨끗하다는 이유로 검증 범위가 비어서는 안 된다.
+
+결과에는 실행한 검증과 생략한 통합 테스트를 구분한다. Nx 캐시 결과는 재사용한 검증으로, 새로 실행한 브라우저 확인은 사용한 데이터와 화면 크기를 함께 보고한다. 환경 문제로 실패했다면 성공으로 간주하지 않고 실행 환경을 확인한다. 특정 에이전트의 설치 경로나 우회 설정은 저장소 표준 명령으로 고정하지 않는다.
 
 ```sh
 pnpm test:integration
@@ -84,7 +88,7 @@ pnpm infra:down
 
 ## Nexon 호출 없는 화면 미리보기
 
-MongoDB·Redis·API 키 없이 군장검사의 성공·부분 자료·오류를 확인할 때 두 터미널에서 실행한다. 기존 웹 개발 서버가 실행 중이라면 먼저 종료한다.
+MongoDB·Redis·API 키 없이 군장검사의 성공·부분 자료·오류를 확인할 때 두 터미널에서 실행한다. 같은 체크아웃의 Nuxt 개발 서버는 하나만 실행한다. 이미 실행 중이면 용도를 확인해 재사용하거나 작업용 서버를 종료한 뒤 전환한다.
 
 ```sh
 pnpm --filter @lara/api dev:preview
@@ -92,3 +96,5 @@ NUXT_PUBLIC_API_BASE_URL=http://127.0.0.1:3002 pnpm --filter @lara/web exec nuxt
 ```
 
 `http://localhost:3003/inspection`에서 `데모라라, 데모비숍, 데모부분`을 추가한다. 데모 자료는 실제 캐릭터가 아닌 합성 데이터로, 기본 정보·스탯·장비·유니온만 제공한다. `데모부분`은 스탯을 누락하며 목록에 없는 이름은 수집 오류를 반환한다. `데모제로, 데모궁수, 데모도적`으로 최대 6명 상태를 확인할 수 있다. 이미지가 없으면 기존 로고를 대체 이미지로 사용한다. API는 3002 포트의 메모리 저장소만 사용하며 재시작하면 초기화된다.
+
+이 미리보기는 HTTP 조회·수집 상태 표시와 웹 상호작용을 재현한다. 실제 Nexon 응답의 파싱 정확도, Redis worker 복구, 실제 캐릭터 이미지와 다양한 장비 배치를 보장하지 않는다. 이 범위는 recorder fixture와 해당 통합 테스트로 따로 확인한다.
