@@ -1,19 +1,9 @@
 <template>
-  <main class="mx-auto max-w-screen-xl px-4 pb-20 pt-10 sm:px-8 sm:pt-16">
-    <header class="text-center">
-      <p
-        class="mb-3 text-xs font-semibold tracking-[0.3em] text-lucidviolet-400"
-      >
-        PARTY INSPECTION
-      </p>
-      <h1
-        class="text-4xl font-extrabold tracking-tight text-lucidviolet-700 sm:text-6xl"
-      >
-        군장검사
-      </h1>
-      <p class="mt-4 text-sm leading-6 text-lucidgray-dark">
-        함께할 캐릭터의 장비와 능력치를 한눈에.<br class="sm:hidden" />
-        최대 6명을 나란히 비교해 보세요.
+  <main class="inspection-page">
+    <header class="inspection-heading">
+      <h1>군장검사</h1>
+      <p v-if="!entries.length">
+        함께할 캐릭터의 장비와 능력치를 나란히 확인하세요.
       </p>
     </header>
     <UiNicknameInput
@@ -23,107 +13,101 @@
       placeholder="캐릭터명 입력"
       describedby="inspection-help"
       :invalid="Boolean(message)"
-      class="mx-auto mb-12 mt-10 max-w-4xl"
+      class="inspection-input"
+      :class="{ 'is-compact': entries.length }"
       @submit="submit"
     >
       <p
         id="inspection-help"
-        class="mt-4 min-h-5 text-center text-xs sm:text-sm"
-        :class="message ? 'text-rose-600' : 'text-lucidgray-dark'"
+        class="input-help"
+        :class="{ 'text-rose-600': message }"
         aria-live="polite"
       >
-        {{ message || '여러 캐릭터는 쉼표나 공백으로 구분해 주세요.' }}
+        {{
+          message ||
+          (entries.length
+            ? '쉼표로 구분해 캐릭터 추가'
+            : '최대 6명 · 여러 캐릭터는 쉼표나 공백으로 구분해 주세요.')
+        }}
       </p>
     </UiNicknameInput>
     <template v-if="entries.length">
-      <div
-        class="mb-4 flex flex-wrap items-center justify-between gap-3 text-sm text-lucidviolet-600"
-      >
-        <h2 class="font-semibold">
-          비교 중인 캐릭터
-          <span class="ml-1 text-lucidviolet-400"
-            >{{ entries.length }} / 6</span
+      <div class="inspection-toolbar">
+        <span>{{ entries.length }} / 6명</span>
+        <div class="flex items-center gap-4">
+          <button
+            :disabled="entries.some((entry) => entry.pending)"
+            @click="refreshAll"
           >
-        </h2>
-        <button
-          class="rounded-lg border border-lucidviolet-200 px-3 py-2 hover:bg-white disabled:opacity-50"
-          :disabled="entries.some((entry) => entry.pending)"
-          @click="refreshAll"
-        >
-          전체 갱신
-        </button>
+            전체 갱신 ↻
+          </button>
+          <div role="group" aria-label="비교 보기 방식" class="flex gap-3">
+            <button
+              v-for="option in viewOptions"
+              :key="option.value"
+              :aria-pressed="view === option.value"
+              @click="selectedView = option.value"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+        </div>
       </div>
       <div
-        class="grid gap-3"
-        style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))"
+        v-if="view === 'table'"
+        class="inspection-scroll"
+        role="region"
+        aria-label="파티 비교, 좌우로 스크롤할 수 있습니다"
+        tabindex="0"
       >
-        <InspectionCharacterCard
+        <div :style="{ minWidth: `${entries.length * 160}px` }">
+          <div
+            class="inspection-roster"
+            :style="{
+              gridTemplateColumns: `repeat(${entries.length}, minmax(0, 1fr))`,
+            }"
+          >
+            <InspectionCharacterCard
+              v-for="(entry, index) in entries"
+              :key="entry.nickname"
+              :entry="entry"
+              :first="index === 0"
+              :last="index === entries.length - 1"
+              @remove="remove(entry.nickname)"
+              @refresh="refresh(entry.nickname)"
+              @move="move(entry.nickname, $event)"
+            />
+          </div>
+          <InspectionComparison :entries="entries" />
+        </div>
+      </div>
+      <div v-else class="inspection-cards">
+        <section
           v-for="(entry, index) in entries"
           :key="entry.nickname"
-          :entry="entry"
-          :first="index === 0"
-          :last="index === entries.length - 1"
-          @remove="remove(entry.nickname)"
-          @refresh="refresh(entry.nickname)"
-          @move="move(entry.nickname, $event)"
-        />
-      </div>
-      <div
-        class="mb-3 mt-10 flex flex-wrap justify-between gap-2 text-xs text-lucidgray-dark"
-      >
-        <p>분홍색은 비교 중 가장 높은 수치 · 누락된 정보는 —</p>
-        <p>표를 좌우로 밀어 모든 캐릭터를 확인하세요.</p>
-      </div>
-      <div
-        class="mb-4 flex justify-end gap-2"
-        role="group"
-        aria-label="비교 보기 방식"
-      >
-        <button
-          v-for="option in viewOptions"
-          :key="option.value"
-          class="rounded-lg border px-4 py-2 text-sm"
-          :class="
-            view === option.value
-              ? 'border-lucidviolet-400 bg-lucidviolet-50 text-lucidviolet-700'
-              : 'border-lucidviolet-100 text-lucidgray-dark'
-          "
-          :aria-pressed="view === option.value"
-          @click="selectedView = option.value"
+          class="min-w-0"
         >
-          {{ option.label }}
-        </button>
-      </div>
-      <InspectionComparison v-if="view === 'table'" :entries="entries" />
-      <div v-else class="grid gap-6 md:grid-cols-2">
-        <section v-for="entry in entries" :key="entry.nickname" class="min-w-0">
-          <h3 class="mb-3 text-lg font-bold text-lucidviolet-600">
-            {{ entry.nickname }}
-          </h3>
+          <InspectionCharacterCard
+            :entry="entry"
+            :first="index === 0"
+            :last="index === entries.length - 1"
+            @remove="remove(entry.nickname)"
+            @refresh="refresh(entry.nickname)"
+            @move="move(entry.nickname, $event)"
+          />
           <InspectionComparison :entries="[entry]" />
         </section>
       </div>
-      <p class="mt-4 text-xs leading-5 text-lucidgray-dark">
-        직업과 버프, 자료의 갱신 시점에 따라 수치가 달라집니다. 전투력만으로
-        실제 보스 기여도를 판단할 수는 없어요.
+      <p class="inspection-footnote">
+        분홍색은 비교 중 가장 높은 수치 · 확인할 수 없는 정보는 —<br />직업과
+        버프, 자료의 기준 시각에 따라 수치가 달라지며 보스 기여도를 판정하지
+        않습니다.
       </p>
     </template>
-    <section
-      v-else
-      class="mx-auto flex max-w-2xl flex-col items-center rounded-3xl border border-dashed border-lucidviolet-200 px-6 py-12 text-center"
-    >
-      <img
-        src="~/assets/spirit/ssun_logo.webp"
-        alt=""
-        class="mb-5 size-20 opacity-80"
-      />
-      <h2 class="text-lg font-semibold text-lucidviolet-600">
-        파티원을 모아볼까요?
-      </h2>
-      <p class="mt-2 text-sm leading-6 text-lucidgray-dark">
-        닉네임을 입력하면 전투력, 포스, 유니온과<br />현재 착용 장비를 함께
-        확인할 수 있어요.
-      </p>
+    <section v-else class="inspection-empty">
+      <img src="~/assets/spirit/ssun_logo.webp" alt="" />
+      <h2>파티원을 모아볼까요?</h2>
+      <p>캐릭터명 입력으로 군장검사를 시작하세요.</p>
     </section>
   </main>
 </template>
@@ -147,3 +131,120 @@ const refreshAll = () => {
   for (const entry of entries.value) void refresh(entry.nickname)
 }
 </script>
+<style scoped>
+.inspection-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+  color: #858297;
+}
+.inspection-heading {
+  text-align: center;
+}
+.inspection-heading h1 {
+  font-size: clamp(40px, 5vw, 76px);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.2;
+  background: linear-gradient(110deg, #c9c9cd, #a6a6ae);
+  background-clip: text;
+  color: transparent;
+}
+.inspection-heading p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.inspection-input {
+  max-width: 850px;
+  margin: 44px auto 64px;
+}
+.inspection-input.is-compact {
+  max-width: 340px;
+  margin: 22px auto 24px;
+}
+.is-compact :deep(input) {
+  font-size: 18px;
+  padding: 6px 0;
+  border-bottom-width: 1px;
+}
+.is-compact :deep(button) {
+  width: 28px;
+  height: 32px;
+}
+.is-compact :deep(svg) {
+  width: 24px;
+  height: 24px;
+}
+.input-help {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa8b6;
+}
+.input-help.text-rose-600 {
+  color: #e34c69;
+}
+.inspection-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #a19cae;
+}
+.inspection-toolbar button {
+  min-height: 32px;
+}
+.inspection-toolbar button:hover,
+.inspection-toolbar button[aria-pressed='true'] {
+  color: #787090;
+}
+.inspection-toolbar button:disabled {
+  opacity: 0.4;
+}
+.inspection-scroll {
+  overflow-x: auto;
+}
+.inspection-roster {
+  display: grid;
+}
+.inspection-cards {
+  display: grid;
+  gap: 48px;
+}
+.inspection-footnote {
+  margin-top: 32px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.9;
+  color: #aaa8b6;
+}
+.inspection-empty {
+  padding: 30px 0;
+  text-align: center;
+}
+.inspection-empty img {
+  width: 72px;
+  margin: 0 auto 24px;
+  opacity: 0.65;
+}
+.inspection-empty h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.inspection-empty p {
+  font-size: 13px;
+  margin-top: 10px;
+}
+@media (max-width: 639px) {
+  .inspection-page {
+    padding: 32px 16px 60px;
+  }
+  .inspection-input.is-compact {
+    margin-bottom: 28px;
+  }
+  .inspection-toolbar {
+    font-size: 11px;
+  }
+}
+</style>
