@@ -60,6 +60,16 @@ set +a
 pnpm dev:collector
 ```
 
+### Doppler의 기존 Nexon 키 사용
+
+로컬에서는 Doppler의 `lara-backend` 프로젝트, `dev_personal` 설정에 저장된 `NXAPI_KEY`를 사용할 수 있다. Doppler CLI가 설치되고 해당 프로젝트를 읽을 수 있도록 로그인돼 있어야 한다. 위와 같이 로컬 `.env`의 MongoDB·Redis 설정을 로드한 뒤 실행한다.
+
+```sh
+pnpm dev:collector:doppler
+```
+
+이 명령은 `NXAPI_KEY`만 가져와 collector 프로세스의 `NEXON_API_KEY`로 주입한다. 기존 `NEXON_API_KEY`보다 Doppler 값을 우선하며 전달 후 `NXAPI_KEY`는 제거한다. 다른 레거시 비밀이나 DB 주소는 가져오지 않는다. 키를 `.env`에 복사하지 않고 Doppler fallback 파일도 만들지 않는다. 키가 없거나 Doppler 연결이 실패하면 collector를 시작하지 않는다. 실제 Nexon 호출은 수집 작업을 처리할 때 발생한다.
+
 기본 `pnpm check`는 포트를 열거나 로컬 서비스를 요구하지 않으며 MongoDB, Redis, Node listener 통합 테스트는 skip한다. 로컬 인프라를 올린 뒤 모든 통합 테스트를 실행한다.
 
 수정 중에는 변경한 앱·패키지의 관련 검증을 먼저 실행하고 마무리에 `pnpm check`를 실행한다. `pnpm nx affected -t lint,typecheck,test,build`를 사용할 때는 비교할 base/head에 이번 작업 커밋이 포함되는지 확인한다. 커밋 후 작업 트리가 깨끗하다는 이유로 검증 범위가 비어서는 안 된다.

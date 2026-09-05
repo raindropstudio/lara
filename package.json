@@ -24,7 +24,8 @@
     "lint": "nx run-many -t lint --all",
     "test": "nx run-many -t test --all",
     "test:integration": "RUN_MONGO_TESTS=1 RUN_NETWORK_TESTS=1 RUN_REDIS_TESTS=1 nx run-many -t test --projects=@lara/data-store,@lara/jobs,@lara/api,@lara/collector --skip-nx-cache",
-    "typecheck": "nx run-many -t typecheck --all"
+    "typecheck": "nx run-many -t typecheck --all",
+    "dev:collector:doppler": "doppler run --project lara-backend --config dev_personal --only-secrets NXAPI_KEY --no-fallback -- sh -c 'test -n \"$NXAPI_KEY\" || exit 1; export NEXON_API_KEY=\"$NXAPI_KEY\"; unset NXAPI_KEY; exec pnpm dev:collector'"
   },
   "devDependencies": {
     "@eslint/js": "catalog:",

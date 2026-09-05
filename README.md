@@ -27,7 +27,7 @@ pnpm dev
 
 MongoDB와 Redis는 `pnpm infra:up`으로 실행하고 `pnpm infra:down`으로 중지한다. 로컬 서비스까지 검증할 때는 `pnpm test:integration`을 사용한다.
 
-collector를 실행할 때만 `.env`의 `NEXON_API_KEY`에 로컬 키를 넣고 Git에 커밋하지 않는다.
+collector의 Nexon 키는 `pnpm dev:collector:doppler`로 기존 Doppler 설정에서 주입할 수 있다. 직접 설정할 경우 `.env`의 `NEXON_API_KEY`에 로컬 키를 넣고 Git에 커밋하지 않는다. 실행 방법은 [로컬 개발 문서](docs/operations/local-development.md)를 따른다.
 
 ## 워크스페이스
 
