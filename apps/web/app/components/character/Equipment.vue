@@ -1,9 +1,11 @@
 <template>
   <div>
     <div class="flex flex-col py-12">
-      <div class="text-8xl font-black text-lucidgray-light">Equipment</div>
+      <UiSectionTitle> Equipment </UiSectionTitle>
       <div class="my-12 flex flex-wrap items-center justify-evenly gap-y-24">
-        <div class="flex flex-col gap-4 px-4">
+        <div
+          class="flex w-full max-w-full flex-col gap-4 overflow-x-auto px-4 sm:w-auto"
+        >
           <HTransitionRoot
             :show="viewMode === 'icon'"
             enter="transition-all duration-300 ease-in-out"
@@ -62,10 +64,10 @@
                   class="size-5 rounded hover:bg-lucidviolet-100"
                   :class="{
                     'bg-lucidviolet-100 font-semibold text-lucidviolet-700':
-                      viewPresetIdx === presetNo - 1,
-                    underline: activePresetIdx === presetNo - 1,
+                      selected === presetNo,
+                    underline: active?.presetNo === presetNo,
                   }"
-                  @click="viewPresetIdx = presetNo - 1"
+                  @click="selected = presetNo"
                 >
                   {{ presetNo }}
                 </button>
@@ -73,16 +75,16 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col px-4">
+        <div class="flex max-w-full flex-col overflow-x-auto px-4">
           <div class="mb-8 flex flex-col">
             <div class="mb-4 flex items-end gap-2">
               <div class="text-5xl font-extrabold text-lucidgray-light">
                 세트 효과
               </div>
               <span
-                v-if="activePresetIdx !== undefined"
+                v-if="active !== undefined"
                 class="text-sm font-light text-lucidgray-dark"
-                >프리셋 {{ activePresetIdx + 1 }} 기준</span
+                >프리셋 {{ active?.presetNo }} 기준</span
               >
             </div>
             <div class="mx-auto">
@@ -116,42 +118,13 @@ const props = defineProps<{
 }>()
 
 const character = toRef(props, 'character')
-const equipPreset = computed(() => character.value?.itemEquipmentPreset)
-const activePresetIdx = computed(() =>
-  equipPreset.value?.findIndex((equip) => equip.active),
-)
-const viewPresetIdx = ref(activePresetIdx.value)
+const { active, selected, items: viewPreset } = useEquipmentPreset(character)
+const activePreset = computed(() => active.value?.itemEquipmentInfo)
 const viewMode = ref<'icon' | 'card'>('icon')
-
-watch(
-  activePresetIdx,
-  (newValue) => {
-    if (newValue !== undefined) {
-      viewPresetIdx.value = newValue
-    }
-  },
-  { immediate: true },
+const mainStatName = computed(
+  () => findMainStat(character.value)?.toUpperCase() ?? 'ERR',
 )
-
-const activePreset = computed(
-  () => equipPreset.value?.[activePresetIdx.value ?? 0]?.itemEquipmentInfo,
+const atkStat = computed(() =>
+  mainStatName.value === 'INT' ? '마력' : '공격력',
 )
-
-const viewPreset = computed(() => {
-  // 백엔드 converter에서 프리셋 순서대로 보내주도록 보장함
-  const preset =
-    equipPreset.value?.[viewPresetIdx.value ?? 0]?.itemEquipmentInfo
-  const addEquip = []
-
-  // 칭호
-  const title = equipPreset.value?.[3]?.itemEquipmentInfo?.[0]
-  if (title) addEquip.push(title)
-
-  // TODO: 드래곤, 메카닉 장비
-
-  return preset?.concat(addEquip)
-})
-
-const mainStatName = findMainStat(character.value)?.toUpperCase() ?? 'ERR'
-const atkStat = mainStatName === 'INT' ? '마력' : '공격력'
 </script>

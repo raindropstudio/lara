@@ -3,7 +3,7 @@
     <div class="flex flex-col py-12">
       <!-- 헤더 영역 -->
       <div class="flex items-end justify-between">
-        <div class="text-8xl font-black text-lucidgray-light">V MATRIX</div>
+        <UiSectionTitle>V MATRIX</UiSectionTitle>
       </div>
 
       <!-- 스킬 그리드 영역 -->

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-col py-12">
-      <div class="text-8xl font-black text-lucidgray-light">Coordinate</div>
+      <UiSectionTitle>Coordinate</UiSectionTitle>
       <div class="my-12 flex flex-wrap items-start justify-evenly gap-y-24">
         <div class="flex flex-col px-4">
           <div class="-mb-8 text-left text-6xl font-black text-lucidgray-light">

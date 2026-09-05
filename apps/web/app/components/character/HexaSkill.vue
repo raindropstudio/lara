@@ -2,7 +2,7 @@
   <div>
     <div class="flex flex-col py-12">
       <div class="flex items-end justify-between">
-        <div class="text-8xl font-black text-lucidgray-light">HEXA</div>
+        <UiSectionTitle>HEXA</UiSectionTitle>
 
         <div class="mb-4 flex items-end justify-end gap-2">
           <div class="flex items-center gap-1 text-lucidgray-dark">

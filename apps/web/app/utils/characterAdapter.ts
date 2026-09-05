@@ -43,6 +43,15 @@ export const toCharacter = (view: CharacterView): Character => {
 
   return {
     dataState: {
+      sections: Object.fromEntries(
+        characterSectionKeys.map((key) => [
+          key,
+          {
+            status: view.sections[key]?.status ?? 'unavailable',
+            stale: view.sections[key]?.stale ?? false,
+          },
+        ]),
+      ),
       incomplete: sections.filter((section) => section?.status !== 'complete')
         .length,
       stale: sections.filter((section) => section?.stale === true).length,
@@ -62,6 +71,7 @@ export const toCharacter = (view: CharacterView): Character => {
     liberationQuestClear: basic.liberationQuestClear ?? false,
     popularity: view.sections.popularity?.data ?? basic.popularity ?? 0,
     updatedAt: basic.updatedAt ?? view.updatedAt,
+    collectedAt: view.updatedAt,
     stat: {
       str: 0,
       dex: 0,

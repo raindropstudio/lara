@@ -36,12 +36,12 @@
       <div
         class="inline-flex items-center text-base font-normal text-lucidgray-dark"
       >
-        {{ mainStat.statName }}
-        <UiTooltip v-if="mainStat.statName === 'MIX'">
+        {{ mainStat.label }}
+        <UiTooltip v-if="mainStat.label === 'MIX'">
           <IconInfo class="-mr-4 size-4 text-lucidgray-medium" />
           <template #tooltip>
             <div>
-              STR, DEX, LUK 합의 70%로 계산한 값이에요.
+              STR, DEX, LUK 합의 66%로 계산한 값이에요.
               <div class="font-medium text-lucidviolet-700">
                 STR: {{ character?.stat?.str }} | DEX:
                 {{ character?.stat?.dex }} | LUK: {{ character?.stat?.luk }}
@@ -49,15 +49,9 @@
             </div>
           </template>
         </UiTooltip>
-        <UiTooltip v-if="mainStat.statName === 'HP'">
-          <IconInfo class="-mr-4 size-4 text-lucidgray-medium" />
-          <template #tooltip>
-            <div>메이플 API의 한계로 최대 50만까지만 보여요.</div>
-          </template>
-        </UiTooltip>
       </div>
       <div class="text-3xl font-bold text-lucid-violetgray">
-        {{ mainStat.statValue }}
+        {{ mainStat.value ?? '—' }}
       </div>
     </div>
     <div
@@ -66,11 +60,10 @@
       <div class="text-base font-normal text-gray-500">헥사 강화</div>
       <div class="text-3xl font-bold text-lucid-violetgray">
         {{
-          (
-            (hexaProgress.currentErdaPiece / hexaProgress.totalErdaPiece) *
-            100
-          ).toFixed(2)
-        }}%
+          character?.dataState.sections?.hexaMatrix?.status === 'complete'
+            ? `${((hexaProgress.currentErdaPiece / hexaProgress.totalErdaPiece) * 100).toFixed(2)}%`
+            : '—'
+        }}
       </div>
     </div>
   </div>
@@ -87,30 +80,10 @@ const combatPower = computed(() => {
   const combat = character.value?.stat?.combatPower
 
   // 123456789 => 1억 2345만 6789
-  return formatToKoreanNumber(combat ?? 0)
+  return combat === undefined ? '—' : formatToKoreanNumber(combat)
 })
 
-const mainStat = computed(() => {
-  const mainStat = {
-    statName: '',
-    statValue: 0,
-  }
-  const stat = findMainStat(character.value)
-  mainStat.statName = stat?.toUpperCase() ?? 'ERROR'
-
-  // 제논
-  if (stat === 'mix') {
-    const mix =
-      (character.value?.stat?.str ?? 0) +
-      (character.value?.stat?.dex ?? 0) +
-      (character.value?.stat?.luk ?? 0)
-    mainStat.statValue = Math.round(mix * 0.7)
-  } else if (stat) {
-    mainStat.statValue = character.value?.stat?.[stat] ?? 0
-  }
-
-  return mainStat
-})
+const mainStat = computed(() => getMainStatSummary(character.value))
 
 const hexaProgress = computed(() => {
   return getHexaProgress(character.value)

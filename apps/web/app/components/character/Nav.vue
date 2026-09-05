@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-center text-nowrap rounded-full border border-lucidviolet-200 bg-white/50 py-1 text-lucid-violetgray backdrop-blur-lg transition-all duration-300 ease-in-out"
+    class="flex w-max max-w-full items-center overflow-x-auto text-nowrap rounded-full border border-lucidviolet-200 bg-white/50 py-1 text-lucid-violetgray backdrop-blur-lg transition-all duration-300 ease-in-out"
     :class="[showImage && isReady ? 'px-1' : 'px-1']"
   >
     <div class="flex items-center justify-center">
@@ -32,7 +32,7 @@
         v-for="(menu, idx) in menus"
         :key="idx"
         :to="{ hash: menu.hash }"
-        class="rounded-full px-4 transition-all hover:bg-lucidviolet-100/70 hover:text-lucidviolet-800"
+        class="rounded-full px-2 text-sm sm:px-4 sm:text-base transition-all hover:bg-lucidviolet-100/70 hover:text-lucidviolet-800"
         :class="[
           currentSection === menu.hash.slice(1)
             ? 'bg-lucidviolet-50/70 text-lucidviolet-800'

@@ -1,9 +1,11 @@
 <template>
   <div>
     <div class="relative flex flex-col items-center justify-center">
-      <div class="mt-20 flex items-center justify-center">
+      <div
+        class="mt-10 flex max-w-full items-center justify-center px-4 sm:mt-20"
+      >
         <h1
-          class="z-10 bg-gradient-to-r from-lucidviolet-300 to-lucidviolet-800 bg-clip-text text-8xl font-bold text-transparent"
+          class="z-10 bg-gradient-to-r from-lucidviolet-300 to-lucidviolet-800 bg-clip-text break-all text-center text-4xl sm:text-7xl lg:text-8xl font-bold text-transparent"
           :class="initStatus === 'pending' ? 'animate-pulse' : ''"
           @click="
             initStatus === 'error' &&
@@ -14,7 +16,7 @@
         </h1>
         <ClientOnly>
           <HTransitionRoot
-            class="absolute right-8 text-lucidviolet-500"
+            class="absolute right-8 hidden text-lucidviolet-500 sm:block"
             :show="initStatus === 'success'"
             enter="transition-opacity duration-300 ease-in"
             enter-from="opacity-0"
@@ -95,7 +97,7 @@
             >, 이전 정상값 {{ character.dataState.stale }}개</span
           >
         </div>
-        <div class="sticky top-4 z-30">
+        <div class="sticky top-4 z-30 max-w-full px-2">
           <CharacterNav
             :character-image-url="character?.imageUrl"
             :show-image="!headerIsVisible"

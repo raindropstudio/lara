@@ -17,8 +17,10 @@
           <NuxtLink
             v-for="(link, idx) in links"
             :key="idx"
-            :to="link.disabled ? '' : link.path"
+            :to="link.path"
+            :aria-disabled="link.disabled || undefined"
             :class="getLinkClass(link.path) + ' rounded-lg p-2'"
+            @click="link.disabled && $event.preventDefault()"
           >
             {{ link.name }}
           </NuxtLink>
@@ -26,6 +28,7 @@
       </div>
       <div class="flex flex-1 items-center justify-end gap-2">
         <button
+          aria-label="캐릭터 검색"
           class="group flex h-8 w-10 items-center gap-3 rounded-md border-lucidviolet-400 bg-transparent px-2 text-left text-lucidviolet-400 hover:border-sunnyorange hover:text-lucidviolet-700 sm:w-16 sm:border-2 lg:w-64"
           @click="onSearch"
         >
@@ -75,14 +78,17 @@
             </svg>
           </HPopoverButton>
           <HPopoverPanel
+            v-slot="{ close }"
             class="absolute right-0 top-0 z-20 mt-20 w-screen bg-lucid-light text-center shadow-lg"
           >
             <NuxtLink
               v-for="(link, idx) in links"
               :key="idx"
               :to="link.path"
+              :aria-disabled="link.disabled || undefined"
               class="block px-4 py-2 text-lg hover:bg-lucidviolet-50"
               :class="getLinkClass(link.path)"
+              @click="link.disabled ? $event.preventDefault() : close()"
             >
               {{ link.name }}
             </NuxtLink>
@@ -98,7 +104,7 @@ const route = useRoute()
 
 const links = [
   { name: '캐릭터', path: '/character' },
-  { name: '군장검사', path: '/', disabled: true },
+  { name: '군장검사', path: '/inspection' },
   { name: '코디', path: '/', disabled: true },
   { name: '지표', path: '/', disabled: true },
   { name: '도구', path: '/', disabled: true },
@@ -117,6 +123,16 @@ const onSearch = () => {
 }
 
 const handleSlash = (e: KeyboardEvent) => {
+  const target = e.target
+  if (
+    e.isComposing ||
+    e.ctrlKey ||
+    e.metaKey ||
+    e.altKey ||
+    (target instanceof HTMLElement &&
+      (target.isContentEditable || target.closest('input, textarea, select')))
+  )
+    return
   if (e.key === '/') {
     e.preventDefault()
     onSearch()

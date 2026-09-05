@@ -14,6 +14,7 @@ export interface Character {
   dataState: {
     incomplete: number
     stale: number
+    sections?: Record<string, { status: string; stale: boolean }>
   }
   nickname: string
   worldName: string
@@ -30,6 +31,7 @@ export interface Character {
   liberationQuestClear: boolean
   popularity: number
   updatedAt: string
+  collectedAt?: string
   stat: Stat
   propensity: Propensity
   hyperStatPreset?: HyperStatPreset[]

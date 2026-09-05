@@ -37,7 +37,7 @@ describe('toCharacter', () => {
 
     expect(character.nickname).toBe('라라')
     expect(character.expRate).toBe(0)
-    expect(character.dataState).toEqual({ incomplete: 20, stale: 0 })
+    expect(character.dataState).toMatchObject({ incomplete: 20, stale: 0 })
     expect(character.stat).toMatchObject({ str: 0, dex: 0, int: 0, luk: 0 })
     expect(character.itemEquipmentPreset).toEqual([])
     expect(character.skill).toEqual([])

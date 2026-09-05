@@ -53,11 +53,13 @@
         >
           <div class="my-2 flex flex-col items-center justify-center">
             <h1
-              class="font-['lato'] text-9xl font-thin tracking-widest text-amber-500"
+              class="font-['lato'] text-6xl sm:text-9xl font-thin tracking-wide sm:tracking-widest text-amber-500"
             >
               lara.moe
             </h1>
-            <h2 class="text-xl tracking-[0.45rem] text-lucidviolet-800">
+            <h2
+              class="px-5 text-center text-sm sm:text-xl tracking-wide sm:tracking-[0.45rem] text-lucidviolet-800"
+            >
               메이플스토리 종합 데이터분석 서비스
               <span class="text-amber-500">라라모에</span>
             </h2>
@@ -65,7 +67,15 @@
           <div
             class="my-4 flex w-full items-center justify-center text-3xl font-thin text-lucidviolet-700"
           >
-            라라가 열심히 공사중!
+            <NuxtLink
+              to="/character"
+              class="rounded-xl bg-lucidviolet-600 px-6 py-3 text-base font-medium text-white hover:bg-lucidviolet-700"
+              >캐릭터 검색</NuxtLink
+            ><NuxtLink
+              to="/inspection"
+              class="ml-3 rounded-xl border border-lucidviolet-200 px-6 py-3 text-base font-medium hover:bg-white"
+              >군장검사</NuxtLink
+            >
           </div>
         </div>
         <div class="my-auto flex h-20 items-center justify-center">

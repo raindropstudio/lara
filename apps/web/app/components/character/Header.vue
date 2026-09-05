@@ -1,8 +1,26 @@
 <template>
   <div class="w-full">
+    <div
+      v-if="character"
+      class="flex flex-col items-center gap-2 px-4 py-5 text-center text-lucidviolet-600 sm:hidden"
+    >
+      <CharacterAvatar
+        :image-url="character.imageUrl"
+        :nickname="character.nickname"
+        class="size-28"
+      />
+      <p class="font-semibold">
+        Lv. {{ character.level }} · {{ character.class }} ·
+        {{ character.worldName }}
+      </p>
+      <p class="text-sm">
+        {{ character.guildName || '길드 없음' }} · 인기도
+        {{ character.popularity }}
+      </p>
+    </div>
     <ConfettiExplosion v-if="birthday" class="mx-auto w-full" />
     <div
-      class="-mt-12 flex w-full select-none justify-center overflow-x-clip text-nowrap pt-12"
+      class="-mt-12 hidden sm:flex w-full select-none justify-center overflow-x-clip text-nowrap pt-12"
     >
       <div class="flex min-w-0 flex-1 flex-col items-end text-right text-5xl">
         <div class="mr-[-170px]">

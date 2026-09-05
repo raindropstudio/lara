@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid grid-cols-3 gap-12">
+    <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-12">
       <template v-for="(pet, idx) in petEquipment" :key="idx">
         <div class="flex items-center gap-4">
           <UiPetTooltip :pet="pet">
