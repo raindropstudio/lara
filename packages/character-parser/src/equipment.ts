@@ -256,7 +256,23 @@ export const parseItemEquipment = (
   const root = record(readJson(body, context), '$', context)
   if (!root) return context.failed()
 
-  const activePreset = integer(root.preset_no, '$.preset_no', context, false)
+  const requestedPreset = integer(root.preset_no, '$.preset_no', context, false)
+  const activePreset =
+    requestedPreset !== undefined &&
+    requestedPreset >= 1 &&
+    requestedPreset <= 3
+      ? requestedPreset
+      : 1
+  if (
+    requestedPreset !== undefined &&
+    (requestedPreset < 1 || requestedPreset > 3)
+  ) {
+    context.unknown(
+      '$.preset_no',
+      '알 수 없는 장비 프리셋 번호입니다. 현재 착용 장비를 사용합니다.',
+      root.preset_no,
+    )
+  }
   const presets: Array<{ presetNo: number; raw: unknown[] }> = [1, 2, 3].map(
     (presetNo) => ({
       presetNo,
@@ -268,11 +284,21 @@ export const parseItemEquipment = (
       ),
     }),
   )
-  if (activePreset === undefined)
-    presets[0] = {
-      presetNo: 1,
-      raw: array(root.item_equipment, '$.item_equipment', context, false),
+  const active = presets.find((preset) => preset.presetNo === activePreset)!
+  if (
+    requestedPreset === undefined ||
+    requestedPreset !== activePreset ||
+    !Array.isArray(root[`item_equipment_preset_${activePreset}`])
+  ) {
+    active.raw = array(root.item_equipment, '$.item_equipment', context)
+    if (requestedPreset !== undefined && requestedPreset === activePreset) {
+      context.issue(
+        `$.item_equipment_preset_${activePreset}`,
+        'missing_required',
+        '활성 프리셋이 없어 현재 착용 장비를 사용합니다.',
+      )
     }
+  }
   const title = titleAsItem(root.title)
   if (title.length > 0) presets.push({ presetNo: 4, raw: title })
   const special = [
@@ -283,9 +309,7 @@ export const parseItemEquipment = (
 
   const result = presets.map(({ presetNo, raw }) => ({
     presetNo,
-    active:
-      activePreset === presetNo ||
-      (presetNo === 1 && activePreset === undefined),
+    active: activePreset === presetNo,
     itemEquipmentInfo: raw.flatMap((item, index) => {
       const mapped = mapItem(
         item,

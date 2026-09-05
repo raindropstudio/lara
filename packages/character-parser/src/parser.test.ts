@@ -183,3 +183,48 @@ describe('캐릭터 parser', () => {
     expect(result.issues[0]?.code).toBe('invalid_json')
   })
 })
+
+describe('장비 프리셋 복구', () => {
+  const weapon = {
+    item_equipment_part: '무기',
+    item_equipment_slot: '무기',
+    item_name: '테스트 무기',
+  }
+  it('활성 프리셋 본문이 빠져도 현재 착용 장비를 보존하고 부분 응답으로 표시한다', () => {
+    const result = parseItemEquipment(
+      json({ preset_no: 2, item_equipment: [weapon] }),
+    )
+    expect(result.status).toBe('partial')
+    expect(
+      result.value?.find((preset) => preset.active)?.itemEquipmentInfo[0]?.name,
+    ).toBe('테스트 무기')
+    expect(result.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          path: '$.item_equipment_preset_2',
+          code: 'missing_required',
+        }),
+      ]),
+    )
+  })
+  it('알 수 없는 프리셋 번호는 보고하고 현재 착용 장비로 복구한다', () => {
+    const result = parseItemEquipment(
+      json({ preset_no: 99, item_equipment: [weapon] }),
+    )
+    expect(result.status).toBe('partial')
+    expect(result.value?.find((preset) => preset.active)?.presetNo).toBe(1)
+    expect(result.value?.[0]?.itemEquipmentInfo).toHaveLength(1)
+  })
+  it('정상적인 빈 프리셋은 현재 착용 장비로 덮어쓰지 않는다', () => {
+    const result = parseItemEquipment(
+      json({
+        preset_no: 2,
+        item_equipment: [weapon],
+        item_equipment_preset_2: [],
+      }),
+    )
+    expect(
+      result.value?.find((preset) => preset.active)?.itemEquipmentInfo,
+    ).toEqual([])
+  })
+})

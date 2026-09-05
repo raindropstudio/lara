@@ -1,7 +1,7 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import type { ApiClient, CollectionRun } from '~/types/api.type'
-import { observeCollectionRun } from './useLara'
+import { observeCollectionRun, createCharacterClient } from './useLara'
 
 const run = (
   status: CollectionRun['status'],
@@ -96,5 +96,51 @@ describe('observeCollectionRun', () => {
 
     expect(result.status).toBe('completed')
     expect(polls).toBe(1)
+  })
+})
+
+describe('수집 대기 종료', () => {
+  it('취소된 요청은 polling을 시작하지 않는다', async () => {
+    const controller = new AbortController()
+    controller.abort(new Error('화면 이탈'))
+    const get = vi.fn()
+    const api = { 'collection-runs': () => ({ get }) } as unknown as ApiClient
+    await expect(
+      observeCollectionRun(api, run('queued', 0), undefined, {
+        signal: controller.signal,
+      }),
+    ).rejects.toThrow('화면 이탈')
+    expect(get).not.toHaveBeenCalled()
+  })
+  it('polling 대기 중 취소하면 다음 요청을 보내지 않는다', async () => {
+    const controller = new AbortController()
+    const get = vi.fn()
+    const api = { 'collection-runs': () => ({ get }) } as unknown as ApiClient
+    const pending = observeCollectionRun(api, run('queued', 0), undefined, {
+      reconnectAttempts: 0,
+      pollIntervalMs: 60_000,
+      signal: controller.signal,
+    })
+    controller.abort(new Error('제거'))
+    await expect(pending).rejects.toThrow('제거')
+    expect(get).not.toHaveBeenCalled()
+  })
+  it('404 이후 수집과 재조회에서 같은 API 인스턴스를 사용한다', async () => {
+    const get = vi
+      .fn()
+      .mockResolvedValueOnce({ status: 404, error: { value: {} } })
+      .mockResolvedValueOnce({
+        status: 503,
+        error: { value: { message: '재조회 실행됨' } },
+      })
+    const post = vi.fn().mockResolvedValue({ data: run('partial', 2) })
+    const api = {
+      characters: () => ({ get, collections: { post } }),
+    } as unknown as ApiClient
+    await expect(
+      createCharacterClient(api).loadCharacter('라라'),
+    ).rejects.toThrow('재조회 실행됨')
+    expect(get).toHaveBeenCalledTimes(2)
+    expect(post).toHaveBeenCalledOnce()
   })
 })
